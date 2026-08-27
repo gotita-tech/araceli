@@ -130,6 +130,27 @@ Estas no son preferencias de estilo: son restricciones del producto.
 `npm run lint` usa `next lint`, que Next 16 retirará; la migración a la CLI de
 ESLint está pendiente y no afecta al resultado actual.
 
+## Publicar en GitHub
+
+El repositorio ya está inicializado con el primer commit en la rama `main`. Para
+subirlo con el nombre `araceli`:
+
+1. Crear el repositorio vacío en <https://github.com/new?name=araceli>
+   (**sin** README, sin `.gitignore` y sin licencia: el proyecto ya los trae).
+2. Enlazarlo y subirlo desde esta carpeta:
+
+```bash
+git remote add origin https://github.com/TU-USUARIO/araceli.git
+```
+
+```bash
+git push -u origin main
+```
+
+Cada `push` a `main` dispara el flujo de [`.github/workflows/ci.yml`](.github/workflows/ci.yml),
+que ejecuta lint, comprobación de tipos, las 22 pruebas del motor y el build de
+producción antes de que Vercel publique nada.
+
 ## Despliegue en Vercel
 
 El proyecto está preparado para desplegarse tal cual. Vercel detecta Next.js,
@@ -147,9 +168,10 @@ Para publicar en producción:
 npx vercel --prod
 ```
 
-**Desde un repositorio Git:** el repositorio debe tener su raíz en esta carpeta
-(`araceli-mapa-interior`), o bien indicar esa ruta en *Root Directory* al
-importar el proyecto en Vercel.
+**Desde el repositorio de GitHub:** en <https://vercel.com/new> se importa
+`araceli`. La raíz del repositorio es este proyecto, así que *Root Directory* se
+queda como está y Vercel detecta Next.js solo. A partir de ahí, cada `push` a
+`main` publica en producción y cada rama genera una previsualización.
 
 ### Variables de entorno
 
