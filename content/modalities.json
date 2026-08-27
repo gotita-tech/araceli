@@ -1,0 +1,235 @@
+{
+  "version": "1.0.0",
+  "items": [
+    {
+      "id": "reiki",
+      "name": "Reiki",
+      "claim": "Una pausa para bajar el ritmo.",
+      "category": "Experiencia de bienestar",
+      "evidenceLevel": "limitada",
+      "blocks": {
+        "whatItIs": "Reiki es una práctica de bienestar de origen japonés en la que la persona que la facilita coloca suavemente las manos sobre el cuerpo o cerca de él, mientras quien la recibe permanece vestido/a, en una posición cómoda y en silencio.",
+        "howSessionGoes": "Durante una sesión de Reiki, el practicante coloca suavemente sus manos sobre o cerca del cuerpo mientras permaneces vestido/a y en una posición cómoda. Suele haber poca conversación: la experiencia transcurre en silencio, con una música suave o sin ella, y puedes pedir una pausa o indicar tus preferencias en cualquier momento.",
+        "whyPeopleChoose": "Muchas personas lo buscan simplemente como un momento de relajación, silencio y autocuidado, sin ningún objetivo concreto más allá de descansar del ritmo cotidiano.",
+        "whatWeKnow": "La investigación científica sobre sus efectos específicos continúa siendo limitada e inconsistente, por lo que aquí lo presentamos como una práctica complementaria de bienestar y no como tratamiento médico.",
+        "whatItIsNot": "No es un tratamiento médico, no diagnostica, no sustituye la atención sanitaria y no debe reemplazar ninguna indicación de un profesional de salud."
+      },
+      "practical": {
+        "durationMinutes": 60,
+        "formats": ["presencial"],
+        "price": null,
+        "priceNote": "Pendiente de configurar.",
+        "availability": "consultar",
+        "sessionRange": { "min": 1, "max": 3 },
+        "contraindications": [],
+        "preparation": "Ropa cómoda. No requiere preparación previa."
+      },
+      "adminNote": ""
+    },
+    {
+      "id": "barras-de-access",
+      "name": "Barras de Access",
+      "claim": "Menos ruido. Más espacio.",
+      "category": "Experiencia de bienestar",
+      "evidenceLevel": "muy-limitada",
+      "blocks": {
+        "whatItIs": "Es una experiencia de contacto suave en diferentes puntos de la cabeza, que se recibe tumbado/a y vestido/a, en un ambiente tranquilo.",
+        "howSessionGoes": "Te acomodas boca arriba y la sesión transcurre con un contacto muy ligero en distintos puntos del cuero cabelludo. No hay masaje ni presión. La mayor parte del tiempo hay silencio, y puedes indicar en cualquier momento si prefieres menos contacto.",
+        "whyPeopleChoose": "Algunas personas la eligen como una manera de relajarse y desconectarse temporalmente del ritmo cotidiano, especialmente si disfrutan del silencio y del contacto suave en la cabeza.",
+        "whatWeKnow": "La investigación disponible todavía es muy limitada, por lo que debe presentarse como experiencia complementaria de bienestar y no como un tratamiento con efectos demostrados.",
+        "whatItIsNot": "No es un tratamiento médico ni psicológico, no diagnostica y no sustituye la atención sanitaria. No prometemos cambios en la vida, en las finanzas ni en la salud."
+      },
+      "practical": {
+        "durationMinutes": 60,
+        "formats": ["presencial"],
+        "price": null,
+        "priceNote": "Pendiente de configurar.",
+        "availability": "consultar",
+        "sessionRange": { "min": 1, "max": 2 },
+        "contraindications": ["Molestias o heridas en el cuero cabelludo.", "Preferencia por experiencias sin contacto físico."],
+        "preparation": "Ropa cómoda. Se recibe tumbado/a."
+      },
+      "adminNote": ""
+    },
+    {
+      "id": "thetahealing",
+      "name": "ThetaHealing",
+      "claim": "Observar aquello que creemos también puede ayudarnos a conocernos.",
+      "category": "Práctica espiritual",
+      "evidenceLevel": "no-concluyente",
+      "blocks": {
+        "whatItIs": "ThetaHealing es una práctica espiritual orientada a explorar creencias, patrones y experiencias personales mediante conversación, introspección y meditación.",
+        "howSessionGoes": "La sesión es principalmente conversada. Se combinan preguntas, momentos de meditación guiada y observación de creencias que aparecen al hablar. Permaneces sentado/a o cómodamente recostado/a y no requiere contacto físico.",
+        "whyPeopleChoose": "Puede resultar interesante para personas que disfrutan de enfoques espirituales y del trabajo de autoconocimiento, y que prefieren explorar hablando antes que en silencio.",
+        "whatWeKnow": "Es una práctica espiritual y no cuenta con evidencia científica que respalde efectos clínicos. Aquí se presenta como experiencia de exploración personal y no como terapia.",
+        "whatItIsNot": "No constituye psicoterapia, diagnóstico ni tratamiento médico. No se utiliza para determinar hechos, ni para tomar decisiones médicas, legales o financieras."
+      },
+      "practical": {
+        "durationMinutes": 75,
+        "formats": ["presencial", "online"],
+        "price": null,
+        "priceNote": "Pendiente de configurar.",
+        "availability": "consultar",
+        "sessionRange": { "min": 1, "max": 3 },
+        "contraindications": [],
+        "preparation": "Un lugar tranquilo donde puedas conversar sin interrupciones."
+      },
+      "adminNote": ""
+    },
+    {
+      "id": "access-facelift",
+      "name": "Access Facelift",
+      "claim": "Un cuidado suave para el rostro y el cuello.",
+      "category": "Experiencia de bienestar",
+      "evidenceLevel": "muy-limitada",
+      "blocks": {
+        "whatItIs": "Es una experiencia de contacto muy suave sobre el rostro, el cuello y la parte alta del pecho, que se recibe tumbado/a en un ambiente tranquilo.",
+        "howSessionGoes": "Te acomodas boca arriba, con el rostro limpio y sin maquillaje si lo prefieres. El contacto es ligero y continuo, sin masaje profundo ni manipulación. La sesión suele transcurrir en silencio.",
+        "whyPeopleChoose": "Algunas personas la eligen como un gesto de autocuidado y como una experiencia agradable de relajación centrada en la zona del rostro y el cuello.",
+        "whatWeKnow": "La investigación disponible es muy limitada. Aquí se presenta como experiencia complementaria de bienestar centrada en la relajación.",
+        "whatItIsNot": "No es un tratamiento estético, dermatológico ni médico. No revierte el envejecimiento, no rejuvenece la piel y no sustituye ningún tratamiento sanitario."
+      },
+      "practical": {
+        "durationMinutes": 60,
+        "formats": ["presencial"],
+        "price": null,
+        "priceNote": "Pendiente de configurar.",
+        "availability": "consultar",
+        "sessionRange": { "min": 1, "max": 2 },
+        "contraindications": ["Lesiones, heridas o afecciones activas en la piel del rostro o cuello.", "Preferencia por experiencias sin contacto físico."],
+        "preparation": "Preferiblemente rostro limpio, sin maquillaje."
+      },
+      "adminNote": "No asociar con rejuvenecimiento ni reversión del envejecimiento en ningún material."
+    },
+    {
+      "id": "metodo-yuen",
+      "name": "Método Yuen",
+      "claim": "Observar patrones sin contacto físico.",
+      "category": "Método complementario",
+      "evidenceLevel": "no-concluyente",
+      "blocks": {
+        "whatItIs": "Es un método energético y de exploración personal que se realiza sin contacto físico, combinando preguntas y una revisión estructurada de temas que la persona quiere observar.",
+        "howSessionGoes": "La sesión se desarrolla conversando, de pie o sentado/a, sin contacto. Se van planteando temas y observando qué patrones aparecen con más fuerza para la persona. Puede realizarse también online.",
+        "whyPeopleChoose": "Suelen elegirlo personas que prefieren una experiencia sin contacto físico y que sienten curiosidad por enfoques energéticos orientados a observar patrones personales.",
+        "whatWeKnow": "No existe evidencia científica que respalde las afirmaciones extraordinarias que aparecen en algunos de sus materiales promocionales. Aquí lo presentamos únicamente como método energético y de exploración personal.",
+        "whatItIsNot": "No diagnostica, no trata enfermedades, no corrige problemas estructurales del cuerpo y no sustituye la atención sanitaria."
+      },
+      "practical": {
+        "durationMinutes": 45,
+        "formats": ["presencial", "online"],
+        "price": null,
+        "priceNote": "Pendiente de configurar.",
+        "availability": "consultar",
+        "sessionRange": { "min": 1, "max": 2 },
+        "contraindications": [],
+        "preparation": "Un lugar tranquilo. No requiere preparación previa."
+      },
+      "adminNote": "No reproducir como hechos las afirmaciones extraordinarias de sus materiales promocionales."
+    },
+    {
+      "id": "liberacion-emociones",
+      "name": "Liberación de emociones",
+      "claim": "Un espacio para poner palabras a aquello que sientes.",
+      "category": "Método complementario",
+      "evidenceLevel": "no-concluyente",
+      "blocks": {
+        "whatItIs": "Es un espacio guiado de exploración emocional en el que se acompaña a la persona a identificar, nombrar y observar aquello que está sintiendo, con herramientas de autoobservación.",
+        "howSessionGoes": "La sesión combina conversación, pausas y ejercicios sencillos de atención a lo que aparece. El ritmo lo marca la persona y siempre es posible detenerse o cambiar de tema.",
+        "whyPeopleChoose": "Suelen elegirlo personas que quieren explorar su mundo emocional con acompañamiento y que prefieren un espacio conversado y reflexivo.",
+        "whatWeKnow": "El nombre exacto de la técnica utilizada por Araceli se confirmará antes de publicar, y la descripción de evidencia se actualizará en consecuencia. Hasta entonces se presenta como método complementario de exploración personal.",
+        "whatItIsNot": "No es psicoterapia, no diagnostica, no trata trastornos y no sustituye la atención psicológica o psiquiátrica."
+      },
+      "practical": {
+        "durationMinutes": 60,
+        "formats": ["presencial", "online"],
+        "price": null,
+        "priceNote": "Pendiente de configurar.",
+        "availability": "consultar",
+        "sessionRange": { "min": 1, "max": 3 },
+        "contraindications": [],
+        "preparation": "Un lugar tranquilo donde puedas hablar con privacidad."
+      },
+      "adminNote": "PENDIENTE: confirmar con Araceli el nombre exacto del método. No asumir que se trata de EFT. Al confirmarlo, actualizar nombre, descripción y bloque de evidencia."
+    },
+    {
+      "id": "canalizacion",
+      "name": "Canalización",
+      "claim": "Una experiencia simbólica e intuitiva.",
+      "category": "Práctica espiritual",
+      "evidenceLevel": "no-concluyente",
+      "blocks": {
+        "whatItIs": "Es una práctica espiritual en la que Araceli comparte impresiones intuitivas y simbólicas a partir de aquello que la persona desea explorar.",
+        "howSessionGoes": "La sesión transcurre conversando, con momentos de silencio y de escucha. Puede realizarse presencialmente u online, y no requiere contacto físico.",
+        "whyPeopleChoose": "Suelen elegirla personas con una relación cercana con lo espiritual, que disfrutan de experiencias simbólicas y contemplativas.",
+        "whatWeKnow": "Es una experiencia espiritual y subjetiva: no es verificable científicamente y no debe interpretarse como información objetiva sobre el mundo.",
+        "whatItIsNot": "No se utiliza para diagnóstico médico, predicción de hechos, decisiones financieras, decisiones legales, determinar hechos ni sustituir asesoramiento profesional."
+      },
+      "practical": {
+        "durationMinutes": 60,
+        "formats": ["presencial", "online"],
+        "price": null,
+        "priceNote": "Pendiente de configurar.",
+        "availability": "consultar",
+        "sessionRange": { "min": 1, "max": 1 },
+        "contraindications": [],
+        "preparation": "Un lugar tranquilo y sin interrupciones."
+      },
+      "adminNote": ""
+    },
+    {
+      "id": "limpieza-energetica",
+      "name": "Limpieza energética",
+      "claim": "Un ritual de bienestar para marcar un antes y un después.",
+      "category": "Práctica espiritual",
+      "evidenceLevel": "no-concluyente",
+      "blocks": {
+        "whatItIs": "Es un ritual de bienestar con enfoque espiritual, pensado como un gesto simbólico de cierre o de comienzo de una etapa.",
+        "howSessionGoes": "La sesión combina elementos rituales sencillos, silencio y acompañamiento. Se realiza de forma presencial, vestido/a y sin contacto físico necesario.",
+        "whyPeopleChoose": "Suelen elegirla personas a las que los rituales les resultan significativos y que buscan marcar simbólicamente un cambio de etapa.",
+        "whatWeKnow": "Es una experiencia simbólica de tradición espiritual. No existe evidencia de efectos medibles y así lo presentamos.",
+        "whatItIsNot": "No elimina entidades, enfermedades, toxinas ni energías medibles. No es un tratamiento médico ni psicológico y no sustituye la atención sanitaria."
+      },
+      "practical": {
+        "durationMinutes": 60,
+        "formats": ["presencial"],
+        "price": null,
+        "priceNote": "Pendiente de configurar.",
+        "availability": "consultar",
+        "sessionRange": { "min": 1, "max": 1 },
+        "contraindications": [],
+        "preparation": "Ropa cómoda."
+      },
+      "adminNote": ""
+    },
+    {
+      "id": "biomagnetismo",
+      "name": "Biomagnetismo",
+      "claim": "Una experiencia energética corporal con imanes.",
+      "category": "Método complementario",
+      "evidenceLevel": "no-concluyente",
+      "blocks": {
+        "whatItIs": "Es una práctica complementaria en la que se colocan imanes en distintos puntos del cuerpo mientras la persona permanece vestida y tumbada.",
+        "howSessionGoes": "Te acomodas boca arriba, vestido/a, y se colocan imanes en distintos puntos durante un tiempo. Hay contacto físico ligero para posicionarlos y la sesión transcurre en calma.",
+        "whyPeopleChoose": "Suelen elegirla personas que ya sienten curiosidad por las prácticas energéticas corporales y quieren vivir la experiencia.",
+        "whatWeKnow": "Las afirmaciones que suelen asociarse a esta práctica no cuentan con respaldo científico. Aquí se presenta exclusivamente como experiencia energética complementaria, nunca como tratamiento.",
+        "whatItIsNot": "No elimina microorganismos, no equilibra el pH del cuerpo, no cura enfermedades y no reemplaza la atención sanitaria. No se ofrece como respuesta a síntomas o enfermedades."
+      },
+      "practical": {
+        "durationMinutes": 60,
+        "formats": ["presencial"],
+        "price": null,
+        "priceNote": "Pendiente de configurar.",
+        "availability": "consultar",
+        "sessionRange": { "min": 1, "max": 2 },
+        "contraindications": [
+          "Marcapasos, desfibrilador, bomba de insulina u otros dispositivos médicos implantados.",
+          "Implantes metálicos, prótesis o material quirúrgico ferromagnético.",
+          "Embarazo.",
+          "Tratamiento médico activo no conversado con un profesional de salud."
+        ],
+        "preparation": "Ropa cómoda, sin objetos metálicos ni dispositivos electrónicos encima."
+      },
+      "adminNote": "Nunca recomendar automáticamente a partir de dolor, enfermedad o síntomas. Sólo aparece si la persona declara interés explícito en prácticas energéticas corporales y supera la comprobación de seguridad."
+    }
+  ]
+}

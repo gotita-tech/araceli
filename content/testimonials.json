@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "note": "Sólo se publican testimonios reales entregados por Araceli con el consentimiento de cada persona. Los elementos con status 'pending' se muestran como espacios vacíos identificados y nunca como texto ficticio.",
+  "items": [
+    { "id": "t1", "status": "pending", "quote": "", "author": "", "context": "", "modalityId": "" },
+    { "id": "t2", "status": "pending", "quote": "", "author": "", "context": "", "modalityId": "" },
+    { "id": "t3", "status": "pending", "quote": "", "author": "", "context": "", "modalityId": "" }
+  ]
+}

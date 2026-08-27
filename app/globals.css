@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Sistema "Resonancia".
+ * Ondas, agua, respiración y círculos concéntricos derivados del isotipo de flor
+ * de la identidad, reinterpretados de forma tecnológica y calmada.
+ */
+
+@layer base {
+  :root {
+    --primary: 67 107 222;
+    --secondary: 110 139 217;
+    --mist: 152 172 219;
+    --ivory: 240 242 219;
+    --paper: 251 251 244;
+    --ink: 12 20 48;
+
+    --ring: 67 107 222;
+    --shell: 78rem;
+  }
+
+  * {
+    border-color: rgb(var(--ink) / 0.08);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: rgb(var(--paper));
+    color: rgb(var(--ink));
+    font-feature-settings: 'kern', 'liga', 'calt';
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgb(var(--primary) / 0.16);
+    color: rgb(var(--ink));
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--primary));
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .shell {
+    width: 100%;
+    max-width: var(--shell);
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .shell {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  .eyebrow {
+    font-size: 0.6875rem;
+    line-height: 1.4;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgb(var(--ink) / 0.5);
+    font-weight: 500;
+  }
+
+  .eyebrow-light {
+    color: rgb(var(--ivory) / 0.62);
+  }
+
+  /* Cristal muy sutil: nunca un "glow" saturado. */
+  .glass {
+    background: linear-gradient(180deg, rgb(255 255 255 / 0.78), rgb(255 255 255 / 0.52));
+    backdrop-filter: blur(14px) saturate(1.05);
+    -webkit-backdrop-filter: blur(14px) saturate(1.05);
+    border: 1px solid rgb(255 255 255 / 0.7);
+  }
+
+  .hairline {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgb(var(--ink) / 0.12), transparent);
+  }
+
+  /* Campo de fondo de las secciones oscuras: dos gotas de color muy diluidas. */
+  .field-deep {
+    background-image:
+      radial-gradient(70% 60% at 20% 0%, rgb(var(--primary) / 0.35), transparent 70%),
+      radial-gradient(60% 50% at 90% 100%, rgb(var(--secondary) / 0.22), transparent 70%);
+  }
+
+  /* Los enlaces de texto amplían su área táctil sin alterar la línea base
+     (WCAG 2.2 AA, criterio 2.5.8 sobre tamaño de destino). */
+  .link-underline {
+    padding-block: 3px;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .link-underline:hover,
+  .link-underline:focus-visible {
+    background-size: 100% 1px;
+  }
+
+  /* Enlaces sueltos dentro de párrafos o listas del pie. */
+  .link-inline {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+  }
+
+  .tabular {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.08em;
+  }
+}
+
+@layer utilities {
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  }
+
+}

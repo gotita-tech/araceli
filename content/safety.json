@@ -1,0 +1,92 @@
+{
+  "version": "1.0.0",
+  "routing": {
+    "clinicalTitle": "Preferimos parar un momento",
+    "clinicalMessage": "Las prácticas disponibles aquí están orientadas al bienestar y al crecimiento personal y no reemplazan atención sanitaria. Por lo que nos cuentas, podría ser más apropiado conversar primero con un profesional de salud cualificado.",
+    "clinicalSecondary": "Si más adelante quieres explorar una experiencia de bienestar como acompañamiento, aquí estaremos.",
+    "urgentTitle": "Tu seguridad va primero",
+    "urgentMessage": "Si sientes que estás en una situación de riesgo inmediato, busca ayuda ahora a través de los servicios de emergencia de tu país o de una persona de confianza que pueda acompañarte hoy mismo.",
+    "urgentSecondary": "Este sitio no puede ofrecer ayuda de urgencia y ninguna de las prácticas descritas aquí sustituye la atención sanitaria.",
+    "restartLabel": "Volver al inicio del mapa",
+    "homeLabel": "Ir a la portada",
+    "patterns": {
+      "urgent": [
+        "suicid",
+        "quitarme la vida",
+        "acabar con mi vida",
+        "matarme",
+        "no quiero vivir",
+        "no quiero seguir viviendo",
+        "hacerme dano",
+        "autolesi",
+        "cortarme",
+        "sobredosis",
+        "me quiero morir",
+        "emergencia",
+        "me estan agrediendo",
+        "me pegan",
+        "abuso sexual",
+        "violacion"
+      ],
+      "clinical": [
+        "diagnostic",
+        "psiquiatr",
+        "psicolog",
+        "psicoterapia",
+        "medicacion",
+        "medicament",
+        "antidepresiv",
+        "ansiolitic",
+        "trastorno",
+        "depresion",
+        "esquizofren",
+        "bipolar",
+        "anorexi",
+        "bulimi",
+        "adiccion",
+        "alcoholism",
+        "epilepsi",
+        "convulsion",
+        "cancer",
+        "tumor",
+        "quimioterapia",
+        "enfermedad",
+        "infeccion",
+        "diabetes",
+        "hipertension",
+        "marcapasos",
+        "operacion",
+        "cirugia",
+        "dolor cronico",
+        "maltrato",
+        "violencia",
+        "duelo reciente",
+        "trauma"
+      ]
+    }
+  },
+  "checks": [
+    {
+      "id": "biomagnetismo",
+      "title": "Antes de continuar, una comprobación",
+      "intro": "El biomagnetismo utiliza imanes sobre el cuerpo. Antes de mostrarte esta modalidad necesitamos que revises algunas situaciones en las que no es apropiada.",
+      "items": [
+        "Llevo un marcapasos, desfibrilador, bomba de insulina u otro dispositivo médico implantado.",
+        "Tengo implantes metálicos, prótesis o material quirúrgico ferromagnético.",
+        "Estoy embarazada.",
+        "Estoy en tratamiento médico activo y no lo he conversado con mi profesional de salud."
+      ],
+      "confirmLabel": "Ninguna de estas situaciones me aplica",
+      "declineLabel": "Alguna me aplica o prefiero no continuar",
+      "declineMessage": "Perfecto. No mostraremos esta modalidad y te propondremos otras experiencias compatibles con tus preferencias. Si tienes dudas, conversarlo con tu profesional de salud es siempre la mejor primera opción.",
+      "footnote": "Esta comprobación es orientativa y no constituye una evaluación sanitaria."
+    }
+  ],
+  "disclaimers": {
+    "global": "Las prácticas que aparecen en este sitio son experiencias de bienestar, prácticas espirituales o métodos complementarios. No son intervenciones médicas ni psicológicas, no diagnostican, no tratan enfermedades y no sustituyen la atención sanitaria.",
+    "map": "Tu Mapa Interior es una guía de orientación construida sólo con las respuestas que decides compartir. No es una evaluación clínica ni un diagnóstico.",
+    "channeling": "La canalización se ofrece como experiencia simbólica y espiritual. No se utiliza para diagnosticar, predecir hechos, ni para tomar decisiones médicas, legales o financieras.",
+    "biomagnetism": "El biomagnetismo se presenta aquí como experiencia energética complementaria. No afirmamos que elimine microorganismos, modifique el pH del cuerpo o trate enfermedades.",
+    "evidence": "Cuando hablamos de evidencia lo hacemos de forma transparente: en la mayoría de estas prácticas la investigación disponible es limitada o poco concluyente, y por eso las presentamos como experiencias complementarias de bienestar."
+  }
+}

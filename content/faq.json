@@ -1,0 +1,50 @@
+{
+  "version": "1.0.0",
+  "items": [
+    {
+      "id": "sustituye",
+      "question": "¿Estas prácticas sustituyen un tratamiento médico o psicológico?",
+      "answer": "No. Todo lo que encontrarás aquí son experiencias de bienestar, prácticas espirituales o métodos complementarios. No diagnostican, no tratan enfermedades y no sustituyen la atención sanitaria. Si estás en tratamiento, lo más sensato es conversarlo con tu profesional de salud."
+    },
+    {
+      "id": "creer",
+      "question": "¿Necesito creer en algo para vivir una sesión?",
+      "answer": "No. Puedes recorrer este sitio y probar una experiencia sin creer previamente en ninguna práctica. Nada de lo que hay aquí intenta convencerte de una creencia."
+    },
+    {
+      "id": "elegir",
+      "question": "No sé qué modalidad elegir. ¿Por dónde empiezo?",
+      "answer": "Por Tu Mapa Interior: nueve preguntas sencillas que ordenan aquello que hoy te interesa explorar y te muestran qué modalidades tienen mayor afinidad con tus preferencias. También puedes escribir directamente a Araceli y decidirlo conversando."
+    },
+    {
+      "id": "sesiones",
+      "question": "¿Cuántas sesiones hacen falta?",
+      "answer": "Una primera experiencia siempre es suficiente para empezar. Después de tus primeros encuentros, lo más importante es revisar cómo te ha resultado la experiencia antes de decidir cómo continuar. Aquí no encontrarás paquetes cerrados ni un número de sesiones presentado como necesario."
+    },
+    {
+      "id": "contacto",
+      "question": "¿Y si prefiero que no haya contacto físico?",
+      "answer": "Es una preferencia perfectamente válida y varias modalidades funcionan sin contacto. El Mapa Interior lo tiene en cuenta desde el principio, y durante cualquier sesión puedes cambiar de opinión y comunicarlo."
+    },
+    {
+      "id": "online",
+      "question": "¿Se puede hacer online?",
+      "answer": "Algunas modalidades sí, porque se basan en conversación y observación. Otras requieren presencia porque implican contacto suave. En el Mapa Interior puedes indicar tu preferencia y sólo verás opciones compatibles."
+    },
+    {
+      "id": "datos",
+      "question": "¿Qué pasa con las respuestas que doy en el Mapa Interior?",
+      "answer": "Se procesan en tu propio navegador y no se envían a ningún servidor para calcular el resultado. No pedimos nombre completo, documento, historia clínica ni diagnósticos. Guardar el mapa es opcional y puedes terminar sin guardar nada."
+    },
+    {
+      "id": "sin-saber",
+      "question": "¿Puedo llegar sin saber qué me pasa?",
+      "answer": "Sí. Puedes llegar simplemente sabiendo cómo te gustaría sentirte o qué te gustaría explorar. No hace falta llegar con un objetivo cerrado ni con una explicación de nada."
+    },
+    {
+      "id": "no-ofrecemos",
+      "question": "¿Qué no vais a encontrar aquí?",
+      "answer": "Diagnósticos, promesas de curación, interpretaciones clínicas de tus respuestas y cualquier intervención médica o psicológica. Tampoco recomendaciones basadas en síntomas o enfermedades."
+    }
+  ]
+}

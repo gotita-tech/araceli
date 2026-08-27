@@ -1,0 +1,259 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-08-26",
+  "engine": {
+    "dimensionWeight": 0.62,
+    "preferenceWeight": 0.38,
+    "scoreFloor": 0.25,
+    "scoreCeiling": 0.95,
+    "affinityFloor": 38,
+    "affinityCeiling": 96,
+    "confidence": {
+      "highGap": 8,
+      "mediumGap": 4,
+      "twoPathsGap": 5,
+      "highSignal": 0.6,
+      "mediumSignal": 0.45
+    },
+    "modifiers": {
+      "lowTouchPenalty": 0.72,
+      "spiritualNotPresentPenalty": 0.55,
+      "spiritualCuriousPenalty": 0.85,
+      "spiritualThreshold": 2.5
+    },
+    "sessions": {
+      "hardCap": 3,
+      "processDefault": 2,
+      "firstExperience": 1
+    }
+  },
+  "questions": [
+    {
+      "id": "intention",
+      "title": "¿Qué te gustaría encontrar en este momento?",
+      "helper": "Puedes elegir hasta dos opciones.",
+      "kind": "multi",
+      "maxChoices": 2,
+      "options": [
+        { "id": "calm", "label": "Más calma", "vector": { "mentalCalm": 3, "bodyRelaxation": 1 }, "tags": ["relaxation"] },
+        { "id": "emotions", "label": "Comprender mis emociones", "vector": { "emotionalExploration": 3, "innerConnection": 1 }, "tags": ["emotionalExploration"] },
+        { "id": "patterns", "label": "Revisar patrones que se repiten", "vector": { "beliefsPatterns": 3, "emotionalExploration": 1 }, "tags": ["patternExploration", "beliefExploration"] },
+        { "id": "connection", "label": "Conectar más conmigo", "vector": { "innerConnection": 3, "spirituality": 1 }, "tags": ["reflection"] },
+        { "id": "spiritual", "label": "Explorar mi dimensión espiritual", "vector": { "spirituality": 3, "innerConnection": 1 }, "tags": ["spiritualOpenness"] },
+        { "id": "gift", "label": "Simplemente regalarme un momento de bienestar", "vector": { "bodyRelaxation": 3, "mentalCalm": 1 }, "tags": ["selfCare", "relaxation"] },
+        { "id": "unknown", "label": "Todavía no lo sé", "vector": {}, "tags": ["undecided"], "lowSignal": true }
+      ]
+    },
+    {
+      "id": "disconnect",
+      "title": "Cuando necesitas desconectarte, ¿qué te resulta más natural?",
+      "kind": "single",
+      "maxChoices": 1,
+      "options": [
+        { "id": "talk", "label": "Conversar", "vector": { "emotionalExploration": 1, "beliefsPatterns": 1 }, "tags": ["conversation"] },
+        { "id": "silence", "label": "Estar en silencio", "vector": { "mentalCalm": 2, "innerConnection": 1 }, "tags": ["silence"] },
+        { "id": "breathe", "label": "Respirar y relajarme", "vector": { "mentalCalm": 2, "bodyRelaxation": 2 }, "tags": ["relaxation"] },
+        { "id": "body", "label": "Recibir una experiencia corporal suave", "vector": { "bodyRelaxation": 3 }, "tags": ["lightTouchOk", "relaxation", "bodyExperience"] },
+        { "id": "reflect", "label": "Reflexionar", "vector": { "beliefsPatterns": 2, "innerConnection": 1 }, "tags": ["reflection"] },
+        { "id": "meditate", "label": "Meditar", "vector": { "innerConnection": 2, "mentalCalm": 1, "spirituality": 1 }, "tags": ["meditation", "silence"] },
+        { "id": "unsure", "label": "No estoy seguro/a", "vector": {}, "tags": ["undecided"], "lowSignal": true }
+      ]
+    },
+    {
+      "id": "space",
+      "title": "¿Qué área sientes que ocupa más espacio en tu vida hoy?",
+      "helper": "No leemos esta respuesta como un síntoma: sólo nos ayuda a entender qué te gustaría explorar.",
+      "kind": "single",
+      "maxChoices": 1,
+      "options": [
+        { "id": "thoughts", "label": "Mis pensamientos", "vector": { "mentalCalm": 2, "beliefsPatterns": 1 }, "tags": [] },
+        { "id": "emotions", "label": "Mis emociones", "vector": { "emotionalExploration": 3 }, "tags": ["emotionalExploration"] },
+        { "id": "relationships", "label": "Mis relaciones", "vector": { "emotionalExploration": 2, "beliefsPatterns": 1 }, "tags": [] },
+        { "id": "decisions", "label": "Mis decisiones", "vector": { "beliefsPatterns": 2, "innerConnection": 1 }, "tags": ["reflection"] },
+        { "id": "confidence", "label": "Mi autoconfianza", "vector": { "beliefsPatterns": 2, "emotionalExploration": 1, "innerConnection": 1 }, "tags": ["patternExploration"] },
+        { "id": "purpose", "label": "Mi propósito", "vector": { "innerConnection": 2, "spirituality": 2 }, "tags": ["reflection"] },
+        { "id": "tiredness", "label": "Mi cansancio cotidiano", "vector": { "bodyRelaxation": 3, "mentalCalm": 1 }, "tags": ["relaxation", "selfCare"] },
+        { "id": "none", "label": "Ninguna en particular", "vector": {}, "tags": ["undecided"], "lowSignal": true }
+      ]
+    },
+    {
+      "id": "experience",
+      "title": "¿Qué tipo de experiencia te atrae más?",
+      "kind": "cards",
+      "maxChoices": 1,
+      "options": [
+        { "id": "deep-relax", "label": "Una experiencia profundamente relajante", "helper": "Bajar el ritmo, sin nada que resolver.", "vector": { "bodyRelaxation": 3, "mentalCalm": 2 }, "tags": ["relaxation", "selfCare"] },
+        { "id": "beliefs-talk", "label": "Una conversación para explorar creencias", "helper": "Poner palabras a aquello que damos por hecho.", "vector": { "beliefsPatterns": 3, "emotionalExploration": 1 }, "tags": ["conversation", "beliefExploration"] },
+        { "id": "energy-space", "label": "Un espacio energético", "helper": "Prácticas que trabajan con la idea de energía.", "vector": { "spirituality": 1, "innerConnection": 1 }, "tags": ["energyInterest"] },
+        { "id": "spiritual", "label": "Una experiencia espiritual o intuitiva", "helper": "Un espacio simbólico y contemplativo.", "vector": { "spirituality": 3, "innerConnection": 2 }, "tags": ["spiritualOpenness", "intuitiveExperience"] },
+        { "id": "soft-touch", "label": "Un tratamiento de contacto suave", "helper": "Manos que acompañan, sin presión.", "vector": { "bodyRelaxation": 3 }, "tags": ["lightTouchOk", "bodyExperience", "selfCare"] },
+        { "id": "no-preference", "label": "No tengo preferencia", "vector": {}, "tags": ["undecided"], "lowSignal": true }
+      ]
+    },
+    {
+      "id": "touch",
+      "title": "¿Te sientes cómodo/a con el contacto físico suave?",
+      "note": "Siempre puedes cambiar de opinión y comunicar tus preferencias durante una sesión.",
+      "kind": "single",
+      "maxChoices": 1,
+      "options": [
+        { "id": "yes", "label": "Sí", "vector": { "bodyRelaxation": 1 }, "tags": ["touchYes", "lightTouchOk"] },
+        { "id": "little", "label": "Prefiero poco contacto", "vector": {}, "tags": ["lowTouch"] },
+        { "id": "none", "label": "Prefiero sin contacto", "vector": {}, "tags": ["noTouch"] },
+        { "id": "neutral", "label": "Me da igual", "vector": {}, "tags": ["touchNeutral", "lightTouchOk"] }
+      ]
+    },
+    {
+      "id": "spirituality",
+      "title": "¿Qué tan presente está la espiritualidad en tu manera de ver la vida?",
+      "kind": "scale",
+      "maxChoices": 1,
+      "options": [
+        { "id": "absent", "label": "No forma parte de mi vida", "vector": { "spirituality": -2 }, "tags": ["spiritualNotPresent"] },
+        { "id": "curious", "label": "Me genera curiosidad", "vector": { "spirituality": 1 }, "tags": ["spiritualCurious"] },
+        { "id": "important", "label": "Es importante para mí", "vector": { "spirituality": 3, "innerConnection": 1 }, "tags": ["spiritualOpenness"] }
+      ]
+    },
+    {
+      "id": "expectation",
+      "title": "¿Qué esperas principalmente de una experiencia con Araceli?",
+      "helper": "Puedes elegir hasta dos opciones.",
+      "kind": "multi",
+      "maxChoices": 2,
+      "options": [
+        { "id": "relax", "label": "Relajarme", "vector": { "bodyRelaxation": 2, "mentalCalm": 2 }, "tags": ["relaxation"] },
+        { "id": "know-myself", "label": "Conocerme mejor", "vector": { "innerConnection": 2, "beliefsPatterns": 1 }, "tags": ["reflection"] },
+        { "id": "emotions", "label": "Explorar emociones", "vector": { "emotionalExploration": 3 }, "tags": ["emotionalExploration"] },
+        { "id": "patterns", "label": "Observar patrones", "vector": { "beliefsPatterns": 3 }, "tags": ["patternExploration"] },
+        { "id": "energy", "label": "Explorar prácticas energéticas", "vector": { "spirituality": 1, "innerConnection": 1 }, "tags": ["energyInterest"] },
+        { "id": "spiritual", "label": "Explorar mi espiritualidad", "vector": { "spirituality": 3 }, "tags": ["spiritualOpenness"] },
+        { "id": "discovering", "label": "Todavía estoy descubriéndolo", "vector": {}, "tags": ["undecided"], "lowSignal": true }
+      ]
+    },
+    {
+      "id": "format",
+      "title": "¿Cómo te gustaría vivir la experiencia?",
+      "helper": "Preferencias logísticas.",
+      "kind": "single",
+      "maxChoices": 1,
+      "options": [
+        { "id": "in-person", "label": "Presencial", "vector": {}, "tags": ["inPerson"] },
+        { "id": "online", "label": "Online", "vector": {}, "tags": ["online"] },
+        { "id": "any", "label": "Cualquiera", "vector": {}, "tags": ["anyFormat"] }
+      ]
+    },
+    {
+      "id": "rhythm",
+      "title": "¿Quieres comenzar de forma sencilla o prefieres explorar un proceso?",
+      "kind": "cards",
+      "maxChoices": 1,
+      "options": [
+        { "id": "single", "label": "Una primera experiencia", "helper": "Quiero probar y ver cómo me siento.", "vector": {}, "tags": ["singleSession"] },
+        { "id": "process", "label": "Un proceso", "helper": "Estoy abierto/a a varios encuentros, revisando el camino sobre la marcha.", "vector": {}, "tags": ["processOpen"] }
+      ]
+    }
+  ],
+  "modalityProfiles": [
+    {
+      "id": "barras-de-access",
+      "name": "Barras de Access",
+      "resultBlurb": "Una experiencia de contacto suave que podrías explorar si buscas principalmente relajación y un momento de pausa.",
+      "group": "pausa-relajacion",
+      "vector": { "mentalCalm": 3, "emotionalExploration": 1, "beliefsPatterns": 1, "innerConnection": 1, "bodyRelaxation": 3, "spirituality": 1 },
+      "bonuses": { "headTouch": 3, "silence": 2, "relaxation": 2 },
+      "touch": "head",
+      "formats": ["presencial"],
+      "maxInitialSessions": 2
+    },
+    {
+      "id": "thetahealing",
+      "name": "ThetaHealing",
+      "resultBlurb": "Un enfoque espiritual orientado a observar creencias y patrones personales.",
+      "group": "creencias-autoconocimiento",
+      "vector": { "mentalCalm": 1, "emotionalExploration": 2, "beliefsPatterns": 3, "innerConnection": 3, "bodyRelaxation": 0, "spirituality": 3 },
+      "bonuses": { "conversation": 2, "beliefExploration": 3, "spiritualOpenness": 2, "online": 1 },
+      "touch": "none",
+      "formats": ["presencial", "online"],
+      "maxInitialSessions": 3
+    },
+    {
+      "id": "reiki",
+      "name": "Reiki",
+      "resultBlurb": "Una práctica de bienestar en silencio, pensada como pausa y descanso del ritmo cotidiano.",
+      "group": "pausa-relajacion",
+      "vector": { "mentalCalm": 3, "emotionalExploration": 1, "beliefsPatterns": 0, "innerConnection": 2, "bodyRelaxation": 3, "spirituality": 2 },
+      "bonuses": { "silence": 2, "relaxation": 3, "energyInterest": 2 },
+      "touch": "optional",
+      "formats": ["presencial"],
+      "maxInitialSessions": 3
+    },
+    {
+      "id": "access-facelift",
+      "name": "Access Facelift",
+      "resultBlurb": "Un tratamiento suave de rostro y cuello que algunas personas eligen como gesto de autocuidado.",
+      "group": "experiencias-corporales",
+      "vector": { "mentalCalm": 2, "emotionalExploration": 0, "beliefsPatterns": 0, "innerConnection": 1, "bodyRelaxation": 3, "spirituality": 1 },
+      "bonuses": { "faceNeckTouch": 3, "relaxation": 2, "selfCare": 2 },
+      "touch": "faceNeck",
+      "formats": ["presencial"],
+      "maxInitialSessions": 2
+    },
+    {
+      "id": "canalizacion",
+      "name": "Canalización",
+      "resultBlurb": "Una experiencia intuitiva y simbólica, para quienes disfrutan de este tipo de exploración.",
+      "group": "exploracion-espiritual",
+      "vector": { "mentalCalm": 0, "emotionalExploration": 1, "beliefsPatterns": 1, "innerConnection": 3, "bodyRelaxation": 0, "spirituality": 3 },
+      "bonuses": { "intuitiveExperience": 3, "spiritualOpenness": 3, "reflection": 2 },
+      "touch": "none",
+      "formats": ["presencial", "online"],
+      "maxInitialSessions": 1
+    },
+    {
+      "id": "biomagnetismo",
+      "name": "Biomagnetismo",
+      "resultBlurb": "Una experiencia energética corporal con imanes, para quienes ya sienten curiosidad por este tipo de prácticas.",
+      "group": "experiencias-corporales",
+      "vector": { "mentalCalm": 1, "emotionalExploration": 0, "beliefsPatterns": 0, "innerConnection": 1, "bodyRelaxation": 2, "spirituality": 1 },
+      "bonuses": { "energyInterest": 2, "magnetInterest": 3 },
+      "touch": "body",
+      "formats": ["presencial"],
+      "maxInitialSessions": 2,
+      "requiresAnyTag": ["energyInterest", "magnetInterest"],
+      "safetyCheckId": "biomagnetismo"
+    },
+    {
+      "id": "metodo-yuen",
+      "name": "Método Yuen",
+      "resultBlurb": "Un método energético sin contacto, orientado a observar patrones personales.",
+      "group": "creencias-autoconocimiento",
+      "vector": { "mentalCalm": 1, "emotionalExploration": 2, "beliefsPatterns": 3, "innerConnection": 2, "bodyRelaxation": 0, "spirituality": 2 },
+      "bonuses": { "energyInterest": 2, "noTouch": 2, "patternExploration": 2 },
+      "touch": "none",
+      "formats": ["presencial", "online"],
+      "maxInitialSessions": 2
+    },
+    {
+      "id": "liberacion-emociones",
+      "name": "Liberación de emociones",
+      "resultBlurb": "Un espacio guiado para explorar y poner palabras a aquello que sientes.",
+      "group": "creencias-autoconocimiento",
+      "vector": { "mentalCalm": 1, "emotionalExploration": 3, "beliefsPatterns": 2, "innerConnection": 2, "bodyRelaxation": 1, "spirituality": 1 },
+      "bonuses": { "emotionalExploration": 3, "reflection": 2 },
+      "touch": "none",
+      "formats": ["presencial", "online"],
+      "maxInitialSessions": 3
+    },
+    {
+      "id": "limpieza-energetica",
+      "name": "Limpieza energética",
+      "resultBlurb": "Un ritual de bienestar con enfoque espiritual, para quienes disfrutan de este tipo de experiencias.",
+      "group": "exploracion-espiritual",
+      "vector": { "mentalCalm": 2, "emotionalExploration": 1, "beliefsPatterns": 0, "innerConnection": 3, "bodyRelaxation": 1, "spirituality": 3 },
+      "bonuses": { "ritualInterest": 3, "energyInterest": 3, "spiritualOpenness": 2 },
+      "touch": "none",
+      "formats": ["presencial"],
+      "maxInitialSessions": 1
+    }
+  ]
+}
