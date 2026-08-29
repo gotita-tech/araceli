@@ -1,34 +1,42 @@
-# Araceli · Tu Mapa Interior
+![araceli](docs/assets/header.svg)
 
-Plataforma de orientación de bienestar. No es una landing de terapeuta: el
-elemento central es **Tu Mapa Interior**, una experiencia de nueve preguntas que
-dibuja una figura con las respuestas de la persona y muestra qué modalidades
-tienen mayor **afinidad** con aquello que hoy quiere explorar.
+## 01 — OVERVIEW
 
-Todo lo que aparece aquí son experiencias de bienestar, prácticas espirituales o
-métodos complementarios. No hay intervenciones médicas ni psicológicas, no se
-diagnostica y nada sustituye a la atención sanitaria.
+Nueve preguntas dibujan una figura con las respuestas de la persona y calculan qué prácticas de bienestar tienen mayor afinidad con lo que quiere explorar. El motor es determinista y auditable, el contenido se valida con Zod en build, y 22 pruebas guardan las reglas de seguridad.
 
-## Empezar
+`Next.js 15` `TypeScript` `Zod` `React Three Fiber` `node:test`
 
-```bash
-npm install
-npm run dev
-```
+**[Ver en vivo ↗](https://araceli-five.vercel.app)** · [el mapa ↗](https://araceli-five.vercel.app/mapa-interior)
 
-| Comando | Qué hace |
+## 02 — EL PROBLEMA
+
+Elegir entre prácticas de bienestar depende casi siempre de un formulario de contacto o de la promesa de quien las ofrece. Quien llega no sabe por qué le proponen una cosa y no otra.
+
+Y el atajo evidente —pedirle la recomendación a un modelo de lenguaje— es exactamente el que no se puede tomar aquí: en un dominio donde una sugerencia mal puesta hace daño, el criterio tiene que ser inspeccionable.
+
+## 03 — LA SOLUCIÓN
+
+**Tu Mapa Interior** son nueve preguntas que dibujan una figura con las respuestas y devuelven qué modalidades tienen mayor **afinidad** con lo que la persona quiere explorar hoy.
+
+El cálculo es un motor determinista con pesos y reglas explícitas: las mismas respuestas producen siempre el mismo resultado, y cada resultado viene acompañado de por qué salió así. Un LLM podría, más adelante, redactar mejor un resultado ya calculado — nunca modificar una puntuación ni saltarse una regla de seguridad.
+
+**Reglas del producto.** No son preferencias de estilo: el motor las hace cumplir y las pruebas las vigilan.
+
+- Sin diagnóstico: ni el copy ni el motor infieren estados de salud.
+- Sin promesas de eficacia.
+- Nunca más de tres encuentros en la ruta inicial, y sólo más de uno si la persona pidió un proceso.
+- El biomagnetismo no se ofrece por síntomas: requiere interés declarado y pasa por una comprobación de dispositivos implantados.
+- Privacidad por defecto: el cálculo ocurre en el navegador y guardar es opcional.
+- Nada inventado — ni testimonios, ni fechas, ni certificaciones.
+
+## 04 — DEMO
+
+| Entorno | URL |
 | --- | --- |
-| `npm run dev` | Servidor de desarrollo |
-| `npm run build` | Build de producción |
-| `npm run lint` | ESLint |
-| `npm run typecheck` | TypeScript en modo estricto |
-| `npm test` | Pruebas del motor de orientación |
-| `npm run check` | Lint + typecheck + pruebas |
+| Producción | <https://araceli-five.vercel.app> |
+| El mapa | <https://araceli-five.vercel.app/mapa-interior> |
 
-Las pruebas se ejecutan con el runner nativo de Node y un pequeño cargador
-(`test/loader.mjs`) que resuelve el alias `@/` y los JSON de contenido.
-
-## Rutas
+**Rutas**
 
 | Ruta | Contenido |
 | --- | --- |
@@ -41,165 +49,85 @@ Las pruebas se ejecutan con el runner nativo de Node y un pequeño cargador
 | `/privacidad` | Cómo se tratan las respuestas |
 | `/admin` | Estudio de contenido (sin indexar) |
 
-El Mapa Interior también se abre desde el botón flotante, presente en todo el
-sitio.
+## 05 — CÓMO FUNCIONA
 
-## Editar contenido sin tocar código
+- **Nueve preguntas, ningún dato personal.** El cuestionario no pide nombre, documento ni historia clínica. Una prueba lo verifica en cada commit.
+- **Normalización.** Las respuestas se proyectan sobre dimensiones normalizadas entre 0 y 1 (`lib/recommender/weights.ts`).
+- **Seguridad antes que recomendación.** Si el texto libre sugiere una situación que requiere atención sanitaria, no se puntúa nada y se acompaña hacia un profesional cualificado (`lib/recommender/safety-rules.ts`).
+- **Afinidad, no eficacia.** La puntuación mide compatibilidad con lo que la persona declaró; nunca probabilidad de que algo funcione.
+- **Explicación.** `lib/recommender/result-explainer.ts` traduce el cálculo a lenguaje que la persona puede contrastar con lo que respondió.
+- **Cuando no hay señal, no se inventa.** Respuestas poco concluyentes dejan el mapa abierto en lugar de rellenarlo.
+
+## 06 — STACK
+
+`Next.js 15` `TypeScript` `Zod` `React Three Fiber` `node:test`
+
+```bash
+npm install
+npm run dev
+```
+
+| Comando | Qué hace |
+| --- | --- |
+| `npm run dev` | Servidor de desarrollo |
+| `npm run build` | Build de producción |
+| `npm run lint` | ESLint |
+| `npm run typecheck` | TypeScript en modo estricto |
+| `npm test` | Las 22 pruebas del motor |
+| `npm run check` | Lint + typecheck + pruebas |
+
+**Variables de entorno**
+
+| Variable | Necesaria | Para qué |
+| --- | --- | --- |
+| `NEXT_PUBLIC_SITE_URL` | Recomendada | Fija URL canónicas, sitemap y Open Graph. Sin ella se usa el dominio de Vercel y, en local, content/site.json |
+| `ENABLE_ADMIN` | Opcional | `true` publica el estudio de contenido en /admin. Sin ella la ruta responde 404 en producción |
+
+## 07 — ARQUITECTURA
+
+![Arquitectura](docs/assets/architecture.svg)
+
+Todo el sitio es estático salvo /admin, que se evalúa por petición y responde 404 sin ENABLE_ADMIN.
+
+### Editar contenido sin tocar código
 
 Todo lo administrable vive en `/content` como JSON validado con Zod:
 
-```
-content/
-├── site.json           Titulares, secciones, contacto, textos legales
-├── modalities.json     Ficha de cada práctica: los cinco bloques y los datos comerciales
-├── recommender.json    Preguntas, pesos del motor y matriz de afinidad
-├── safety.json         Enrutamiento de seguridad y comprobaciones previas
-├── faq.json            Preguntas frecuentes
-├── testimonials.json   Testimonios (sólo reales)
-└── about.json          Trayectoria y formación
-```
+| Archivo | Qué contiene |
+| --- | --- |
+| `site.json` | Titulares, secciones, contacto, textos legales |
+| `modalities.json` | Ficha de cada práctica: los cinco bloques y los datos comerciales |
+| `recommender.json` | Preguntas, pesos del motor y matriz de afinidad |
+| `safety.json` | Enrutamiento de seguridad y comprobaciones previas |
+| `faq.json` | Preguntas frecuentes |
+| `testimonials.json` | Testimonios (sólo reales) |
+| `about.json` | Trayectoria y formación |
 
-En `/admin` hay un estudio que edita estos archivos con validación en vivo,
-formularios para prácticas y para la matriz de afinidad, y descarga del JSON
-resultante. Si un dato obligatorio falta o es incoherente, **el build falla**: no
-llega a producción.
+En `/admin` hay un estudio que edita estos archivos con validación en vivo y descarga del JSON resultante. Si un dato obligatorio falta o es incoherente, **el build falla**: no llega a producción.
 
-### Pendiente de completar con datos reales
+### Decisiones técnicas que costaron encontrar
 
-- Nombre exacto del método de «Liberación de emociones» (no se asume que sea EFT).
-- Años, escuelas, certificaciones y ubicaciones de cada formación.
-- Testimonios con consentimiento de cada persona.
-- Precios, disponibilidad y canales de contacto.
-- Fotografías.
+- **Framer Motion 13.** La versión importa: en 12.43 las salidas de `AnimatePresence` no se completaban con React 19.2. El modal usa además montaje controlado (`usePresence`) porque su interior tiene animaciones anidadas y el cierre debe ser determinista.
+- **React Three Fiber** sólo en el agua del hero y del cierre: un plano con shader, cargado dinámicamente y sólo si el dispositivo lo justifica (`use-perf-tier`).
+- **Pruebas con el runner nativo de Node** y un cargador propio (`test/loader.mjs`) que resuelve el alias `@/` y los JSON de contenido — sin añadir un framework de test al proyecto.
 
-Hasta entonces el sitio lo dice de forma explícita: «Testimonio pendiente», «Año
-por confirmar», «Consultar». Nada está inventado.
+### Documentación
 
-## Estructura
+- [Auditoría y arquitectura](./docs/auditoria-y-arquitectura.md) — producto, UX, sistema visual, componentes, responsive, animación, accesibilidad y rendimiento.
+- [Motor de orientación](./docs/motor-de-recomendacion.md) — cálculo, explicabilidad, seguridad y cómo ajustarlo.
 
-```
-app/           Rutas (App Router)
-components/    layout · sections · map · visual · admin · ui
-lib/
-├── recommender/   Motor determinista y reglas de seguridad
-├── content/       Carga y validación del contenido
-├── hooks/         reduced-motion, rendimiento, foco, montaje, scroll
-├── storage.ts     Guardado local opcional del mapa
-└── analytics.ts   Analítica respetuosa (desactivada por defecto)
-content/       Contenido administrable
-docs/          Auditoría, arquitectura y motor
-test/          Pruebas del motor
-```
+## 08 — ESTADO ACTUAL
 
-## Reglas del producto
+- Desplegado y accesible. CI en verde: lint, tipos, 22 pruebas y build de producción en cada push a `main`.
+- Las previsualizaciones responden `Disallow: /` y llevan `noindex`: ningún despliegue de prueba acaba en un buscador.
+- El contenido todavía espera datos reales — años de formación, escuelas, testimonios con consentimiento, precios y fotografías. Hasta entonces el sitio lo dice de forma explícita («Testimonio pendiente», «Año por confirmar») en vez de rellenar el hueco.
 
-Estas no son preferencias de estilo: son restricciones del producto.
+## 09 — SIGUIENTE ITERACIÓN
 
-1. **Sin diagnóstico.** Ni el copy ni el motor infieren estados de salud.
-   Lenguaje permitido: «Según lo que nos contaste…», «podría resultarte
-   compatible», «afinidad alta», «ruta sugerida».
-2. **Sin promesas de eficacia.** La afinidad mide compatibilidad con las
-   preferencias declaradas, nunca probabilidad de funcionar.
-3. **Seguridad antes que recomendación.** Si el texto opcional sugiere una
-   situación que requiere atención sanitaria, no se puntúa nada y se acompaña
-   hacia un profesional cualificado.
-4. **Nunca más de tres encuentros.** Y sólo más de uno si la persona pidió un
-   proceso y la afinidad es alta. Siempre con pausa de revisión.
-5. **El biomagnetismo no se ofrece por síntomas.** Requiere interés declarado y
-   pasa por una comprobación de dispositivos implantados.
-6. **Privacidad por defecto.** Sin nombre, sin documento, sin historia clínica.
-   El cálculo ocurre en el navegador y guardar es opcional.
-7. **Nada inventado.** Ni testimonios, ni fechas, ni certificaciones.
+- Completar el contenido con los datos reales pendientes.
+- Migrar `next lint` a la CLI de ESLint antes de que Next 16 lo retire.
+- Explorar el uso de un LLM sólo en la capa de redacción del resultado, sin acceso a las puntuaciones ni a las reglas de seguridad.
 
-## Decisiones técnicas
+![](docs/assets/rule.svg)
 
-- **Next.js 15 (App Router) + React 19 + TypeScript estricto.** Rutas estáticas,
-  Server Components donde es posible.
-- **Tailwind 3.4** con el sistema de diseño en `tailwind.config.ts`.
-- **Framer Motion 13.** La versión importa: en 12.43 las salidas de
-  `AnimatePresence` no se completaban con React 19.2. El modal, además, usa
-  montaje controlado (`usePresence`) porque su interior tiene animaciones
-  anidadas y el cierre debe ser determinista.
-- **React Three Fiber + Three.js** sólo en el agua del hero y del cierre: un
-  plano con shader, cargado dinámicamente y sólo si el dispositivo lo justifica.
-- **Zod** valida todo el contenido en build.
-- **El recomendador no usa modelos de lenguaje.** Un LLM podría, más adelante,
-  redactar el resultado ya calculado, pero nunca modificar puntuaciones ni
-  saltarse las reglas de seguridad.
-
-`npm run lint` usa `next lint`, que Next 16 retirará; la migración a la CLI de
-ESLint está pendiente y no afecta al resultado actual.
-
-## Publicar en GitHub
-
-El repositorio ya está inicializado con el primer commit en la rama `main`. Para
-subirlo con el nombre `araceli`:
-
-1. Crear el repositorio vacío en <https://github.com/new?name=araceli>
-   (**sin** README, sin `.gitignore` y sin licencia: el proyecto ya los trae).
-2. Enlazarlo y subirlo desde esta carpeta:
-
-```bash
-git remote add origin https://github.com/TU-USUARIO/araceli.git
-```
-
-```bash
-git push -u origin main
-```
-
-Cada `push` a `main` dispara el flujo de [`.github/workflows/ci.yml`](.github/workflows/ci.yml),
-que ejecuta lint, comprobación de tipos, las 22 pruebas del motor y el build de
-producción antes de que Vercel publique nada.
-
-## Despliegue en Vercel
-
-El proyecto está preparado para desplegarse tal cual. Vercel detecta Next.js,
-instala con el `package-lock.json` y ejecuta `npm run build`.
-
-**Con la CLI, desde esta carpeta y sin necesidad de repositorio:**
-
-```bash
-npx vercel
-```
-
-Para publicar en producción:
-
-```bash
-npx vercel --prod
-```
-
-**Desde el repositorio de GitHub:** en <https://vercel.com/new> se importa
-`araceli`. La raíz del repositorio es este proyecto, así que *Root Directory* se
-queda como está y Vercel detecta Next.js solo. A partir de ahí, cada `push` a
-`main` publica en producción y cada rama genera una previsualización.
-
-### Variables de entorno
-
-| Variable | Necesaria | Para qué sirve |
-| --- | --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | Recomendada | Dominio propio. Fija las URL canónicas, el sitemap y las etiquetas Open Graph. Sin ella se usa el dominio de Vercel y, en local, `content/site.json` |
-| `ENABLE_ADMIN` | Opcional | `true` publica el estudio de contenido en `/admin`. Sin ella la ruta responde 404 en producción |
-
-`.env.example` recoge ambas. Para desarrollo local, cópialo a `.env.local`.
-
-### Comportamiento por entorno
-
-- **Producción.** Se indexa, `robots.txt` apunta al sitemap y excluye `/admin`.
-- **Previsualizaciones.** `robots.txt` responde `Disallow: /` y los metadatos
-  llevan `noindex`: ningún despliegue de prueba acaba en un buscador.
-- **`/admin`.** Se evalúa en cada petición, así que activar o desactivar
-  `ENABLE_ADMIN` no exige volver a desplegar. Conviene mantenerlo cerrado:
-  contiene notas internas de trabajo que no son contenido publicable. Si Araceli
-  necesita acceso permanente, lo razonable es activarlo y añadir además la
-  protección por contraseña de Vercel.
-
-Todo el sitio es estático salvo `/admin`, así que el despliegue se sirve desde
-CDN sin funciones de servidor en las rutas públicas.
-
-## Documentación
-
-- [Auditoría y arquitectura](./docs/auditoria-y-arquitectura.md) — decisiones de
-  producto, UX, sistema visual, componentes, responsive, animación,
-  accesibilidad y rendimiento.
-- [Motor de orientación](./docs/motor-de-recomendacion.md) — cálculo,
-  explicabilidad, seguridad y cómo ajustarlo.
+<sub>Parte de **[GOTITA//TECH](https://github.com/gotita-tech/gotita-tech)**. Este README se genera desde el manifiesto del perfil; para cambiarlo, edita `projects.json` allí y vuelve a ejecutar `kit/build.mjs`.</sub>

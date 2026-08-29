@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="584" viewBox="0 0 1000 584" role="img">
+<rect x="0.5" y="0.5" width="999" height="583" rx="10" fill="#0b0b0d" stroke="#23232b" stroke-width="1"/>
+<path d="M0.5 10.5a10 10 0 0 1 10-10h979a10 10 0 0 1 10 10v26H0.5Z" fill="#131317"/>
+<line x1="0.5" y1="36.5" x2="999.5" y2="36.5" stroke="#23232b" stroke-width="1" stroke-linecap="square"/>
+<rect x="20" y="14.5" width="7" height="7" rx="0" fill="#d17ab6" shape-rendering="crispEdges"/>
+<rect x="34" y="14.5" width="7" height="7" rx="0" fill="#2f2f39" shape-rendering="crispEdges"/>
+<rect x="48" y="14.5" width="7" height="7" rx="0" fill="#2f2f39" shape-rendering="crispEdges"/>
+<text x="76" y="22.5" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="12" font-weight="400" fill="#5a5a66" text-anchor="start">arquitectura — el contenido es datos, no código</text>
+<text x="24" y="104" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="9.5" font-weight="400" fill="#5a5a66" text-anchor="start" letter-spacing="1.4">CONTENIDO</text>
+<line x1="24" y1="114" x2="150" y2="114" stroke="#23232b" stroke-width="1" stroke-linecap="square"/>
+<rect x="172.5" y="82.5" width="390" height="55" rx="4" fill="#131317" stroke="#2f2f39" stroke-width="1"/>
+<rect x="172.5" y="82.5" width="3" height="55" rx="0" fill="#d17ab6"/>
+<text x="188" y="107" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="12.5" font-weight="400" fill="#e9e9ee" text-anchor="start">content/*.json</text>
+<text x="188" y="122" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="11" font-weight="400" fill="#8b8b97" text-anchor="start">site · modalities · recommender · safety · faq · about</text>
+<rect x="579.5" y="82.5" width="390" height="55" rx="4" fill="#131317" stroke="#2f2f39" stroke-width="1"/>
+<rect x="579.5" y="82.5" width="3" height="55" rx="0" fill="#d17ab6"/>
+<text x="595" y="107" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="12.5" font-weight="400" fill="#e9e9ee" text-anchor="start">/admin</text>
+<text x="595" y="122" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="11" font-weight="400" fill="#8b8b97" text-anchor="start">estudio con validación en vivo</text>
+<line x1="571" y1="140" x2="571" y2="172" stroke="#2f2f39" stroke-width="1" stroke-linecap="square" stroke-dasharray="3 4"/>
+<path d="M566 166L571 174L576 166Z" fill="#2f2f39"/>
+<text x="24" y="200" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="9.5" font-weight="400" fill="#5a5a66" text-anchor="start" letter-spacing="1.4">VALIDACIÓN</text>
+<line x1="24" y1="210" x2="150" y2="210" stroke="#23232b" stroke-width="1" stroke-linecap="square"/>
+<rect x="172.5" y="178.5" width="390" height="55" rx="4" fill="#131317" stroke="#2f2f39" stroke-width="1"/>
+<rect x="172.5" y="178.5" width="3" height="55" rx="0" fill="#2f2f39"/>
+<text x="188" y="203" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="12.5" font-weight="400" fill="#e9e9ee" text-anchor="start">lib/content/schema.ts</text>
+<text x="188" y="218" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="11" font-weight="400" fill="#8b8b97" text-anchor="start">Zod — el build falla si falta un dato</text>
+<rect x="579.5" y="178.5" width="390" height="55" rx="4" fill="#131317" stroke="#2f2f39" stroke-width="1"/>
+<rect x="579.5" y="178.5" width="3" height="55" rx="0" fill="#2f2f39"/>
+<text x="595" y="203" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="12.5" font-weight="400" fill="#e9e9ee" text-anchor="start">lib/recommender/schema.ts</text>
+<text x="595" y="218" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="11" font-weight="400" fill="#8b8b97" text-anchor="start">preguntas, pesos y matriz de afinidad</text>
+<line x1="571" y1="236" x2="571" y2="268" stroke="#2f2f39" stroke-width="1" stroke-linecap="square" stroke-dasharray="3 4"/>
+<path d="M566 262L571 270L576 262Z" fill="#2f2f39"/>
+<text x="24" y="296" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="9.5" font-weight="400" fill="#5a5a66" text-anchor="start" letter-spacing="1.4">MOTOR</text>
+<line x1="24" y1="306" x2="150" y2="306" stroke="#23232b" stroke-width="1" stroke-linecap="square"/>
+<rect x="172.5" y="274.5" width="186" height="55" rx="4" fill="#131317" stroke="#d17ab6" stroke-width="1"/>
+<rect x="172.5" y="274.5" width="3" height="55" rx="0" fill="#d17ab6"/>
+<text x="188" y="299" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="12.5" font-weight="400" fill="#e9e9ee" text-anchor="start">seguridad</text>
+<text x="188" y="314" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="11" font-weight="400" fill="#8b8b97" text-anchor="start">safety-rules.ts</text>
+<rect x="375.5" y="274.5" width="186" height="55" rx="4" fill="#131317" stroke="#2f2f39" stroke-width="1"/>
+<rect x="375.5" y="274.5" width="3" height="55" rx="0" fill="#2f2f39"/>
+<text x="391" y="299" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="12.5" font-weight="400" fill="#e9e9ee" text-anchor="start">pesos</text>
+<text x="391" y="314" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="11" font-weight="400" fill="#8b8b97" text-anchor="start">weights.ts</text>
+<rect x="578.5" y="274.5" width="186" height="55" rx="4" fill="#131317" stroke="#2f2f39" stroke-width="1"/>
+<rect x="578.5" y="274.5" width="3" height="55" rx="0" fill="#2f2f39"/>
+<text x="594" y="299" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="12.5" font-weight="400" fill="#e9e9ee" text-anchor="start">motor de cálculo</text>
+<text x="594" y="314" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="11" font-weight="400" fill="#8b8b97" text-anchor="start">recommendation-engine</text>
+<rect x="781.5" y="274.5" width="186" height="55" rx="4" fill="#131317" stroke="#2f2f39" stroke-width="1"/>
+<rect x="781.5" y="274.5" width="3" height="55" rx="0" fill="#2f2f39"/>
+<text x="797" y="299" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="12.5" font-weight="400" fill="#e9e9ee" text-anchor="start">explicación</text>
+<text x="797" y="314" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="11" font-weight="400" fill="#8b8b97" text-anchor="start">result-explainer.ts</text>
+<line x1="571" y1="332" x2="571" y2="364" stroke="#2f2f39" stroke-width="1" stroke-linecap="square" stroke-dasharray="3 4"/>
+<path d="M566 358L571 366L576 358Z" fill="#2f2f39"/>
+<text x="24" y="392" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="9.5" font-weight="400" fill="#5a5a66" text-anchor="start" letter-spacing="1.4">INTERFAZ</text>
+<line x1="24" y1="402" x2="150" y2="402" stroke="#23232b" stroke-width="1" stroke-linecap="square"/>
+<rect x="172.5" y="370.5" width="186" height="55" rx="4" fill="#131317" stroke="#2f2f39" stroke-width="1"/>
+<rect x="172.5" y="370.5" width="3" height="55" rx="0" fill="#2f2f39"/>
+<text x="188" y="395" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="12.5" font-weight="400" fill="#e9e9ee" text-anchor="start">question-step</text>
+<text x="188" y="410" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="11" font-weight="400" fill="#8b8b97" text-anchor="start">9 pasos</text>
+<rect x="375.5" y="370.5" width="186" height="55" rx="4" fill="#131317" stroke="#2f2f39" stroke-width="1"/>
+<rect x="375.5" y="370.5" width="3" height="55" rx="0" fill="#2f2f39"/>
+<text x="391" y="395" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="12.5" font-weight="400" fill="#e9e9ee" text-anchor="start">map-shape</text>
+<text x="391" y="410" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="11" font-weight="400" fill="#8b8b97" text-anchor="start">dibuja las respuestas</text>
+<rect x="578.5" y="370.5" width="186" height="55" rx="4" fill="#131317" stroke="#2f2f39" stroke-width="1"/>
+<rect x="578.5" y="370.5" width="3" height="55" rx="0" fill="#2f2f39"/>
+<text x="594" y="395" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="12.5" font-weight="400" fill="#e9e9ee" text-anchor="start">result-screen</text>
+<text x="594" y="410" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="11" font-weight="400" fill="#8b8b97" text-anchor="start">afinidad + explicación</text>
+<rect x="781.5" y="370.5" width="186" height="55" rx="4" fill="#131317" stroke="#2f2f39" stroke-width="1"/>
+<rect x="781.5" y="370.5" width="3" height="55" rx="0" fill="#2f2f39"/>
+<text x="797" y="395" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="12.5" font-weight="400" fill="#e9e9ee" text-anchor="start">why-panel</text>
+<text x="797" y="410" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="11" font-weight="400" fill="#8b8b97" text-anchor="start">desglose abierto</text>
+<line x1="571" y1="428" x2="571" y2="460" stroke="#2f2f39" stroke-width="1" stroke-linecap="square" stroke-dasharray="3 4"/>
+<path d="M566 454L571 462L576 454Z" fill="#2f2f39"/>
+<text x="24" y="488" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="9.5" font-weight="400" fill="#5a5a66" text-anchor="start" letter-spacing="1.4">GARANTÍAS</text>
+<line x1="24" y1="498" x2="150" y2="498" stroke="#23232b" stroke-width="1" stroke-linecap="square"/>
+<rect x="172.5" y="466.5" width="797" height="55" rx="4" fill="#131317" stroke="#2f2f39" stroke-width="1"/>
+<rect x="172.5" y="466.5" width="3" height="55" rx="0" fill="#2f2f39"/>
+<text x="188" y="491" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="12.5" font-weight="400" fill="#e9e9ee" text-anchor="start">22 pruebas · node:test</text>
+<text x="188" y="506" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="11" font-weight="400" fill="#8b8b97" text-anchor="start">lint · typecheck · test · build en cada push</text>
+<text x="24" y="570" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace' font-size="11" font-weight="400" fill="#5a5a66" text-anchor="start">Todo el sitio es estático salvo /admin, que se evalúa por petición y responde 404 sin ENABLE_ADMIN.</text>
+</svg>
