@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 import { useMap } from '@/components/map/map-provider';
 import { Button } from '@/components/ui/button';
-import { WaterField } from '@/components/visual/water-field';
+import { EditorialImage } from '@/components/visual/editorial-image';
 import { useReducedMotion } from '@/lib/hooks/use-reduced-motion';
 import { CALM_EASE } from '@/lib/utils/motion';
 
@@ -33,7 +33,7 @@ export function Hero({ eyebrow, title, subtitle, primaryCta, secondaryCta, note 
 
   return (
     <section className="relative flex min-h-[92svh] items-center overflow-hidden bg-ivory-paper pt-[68px]">
-      <WaterField className="mask-fade-b" intensity={1} />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(152,172,219,0.15),transparent_65%)]" />
 
       <div className="shell relative z-10 grid w-full items-center gap-12 py-16 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.75fr)] lg:py-24">
         <div className="max-w-2xl">
@@ -67,17 +67,12 @@ export function Hero({ eyebrow, title, subtitle, primaryCta, secondaryCta, note 
           </motion.p>
         </div>
 
-        <motion.div className="hidden lg:block" data-reveal {...appear(0.3)}>
-          <div className="ml-auto max-w-xs border-l border-ink/10 pl-7">
-            <p className="text-sm leading-relaxed text-ink-500">
-              Nueve preguntas sencillas dibujan una figura con aquello que hoy te interesa explorar.
-            </p>
-            <Link
-              href={primaryCta.href}
-              className="link-underline mt-4 inline-block text-sm text-primary"
-            >
-              Ver cómo funciona
-            </Link>
+        <motion.div className="relative mx-auto w-full max-w-lg pb-8 lg:pl-6" data-reveal {...appear(0.3)}>
+          <EditorialImage id="hero" priority className="h-[360px] sm:h-[470px] lg:h-[530px]" sizes="(max-width: 768px) 100vw, 45vw" />
+          <div className="relative mx-5 -mt-14 rounded-2xl border border-white/80 bg-ivory-paper/95 p-6 shadow-soft backdrop-blur">
+            <p className="eyebrow">Tu momento, tu punto de partida</p>
+            <p className="mt-3 font-serif text-title font-light text-ink-800">No necesitas tenerlo todo claro.</p>
+            <Link href={primaryCta.href} className="link-underline mt-4 inline-block text-sm text-primary">Nueve preguntas para empezar ↗</Link>
           </div>
         </motion.div>
       </div>

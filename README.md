@@ -120,11 +120,11 @@ En `/admin` hay un estudio que edita estos archivos con validación en vivo y de
 
 - Desplegado y accesible. CI en verde: lint, tipos, 22 pruebas y build de producción en cada push a `main`.
 - Las previsualizaciones responden `Disallow: /` y llevan `noindex`: ningún despliegue de prueba acaba en un buscador.
-- El contenido todavía espera datos reales — años de formación, escuelas, testimonios con consentimiento, precios y fotografías. Hasta entonces el sitio lo dice de forma explícita («Testimonio pendiente», «Año por confirmar») en vez de rellenar el hueco.
+- Actualización del 8 de octubre de 2026: contacto confirmado, logotipo y retrato auténticos de Tiempo Interior, imágenes de ambiente para las nueve prácticas y fuentes locales. Los testimonios y datos de formación pendientes no aparecen en el sitio público. [Entrega y procedencia de imágenes](docs/entrega-2026-10-08.md).
 
 ## 09 — SIGUIENTE ITERACIÓN
 
-- Completar el contenido con los datos reales pendientes.
+- Completar ciudad, horarios, valores actuales, formación y testimonios con consentimiento.
 - Migrar `next lint` a la CLI de ESLint antes de que Next 16 lo retire.
 - Explorar el uso de un LLM sólo en la capa de redacción del resultado, sin acceso a las puntuaciones ni a las reglas de seguridad.
 

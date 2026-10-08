@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Newsreader } from 'next/font/google';
+import localFont from 'next/font/local';
 
 import { FloatingMapButton } from '@/components/map/floating-map-button';
 import { MapModal } from '@/components/map/map-modal';
@@ -13,19 +13,16 @@ import { isProductionDeployment, siteUrl } from '@/lib/site-url';
 import './globals.css';
 
 /** Dos familias, ni una más: serif editorial para la voz, sans para la interfaz. */
-const display = Newsreader({
-  subsets: ['latin'],
-  weight: ['200', '300', '400'],
-  style: ['normal', 'italic'],
-  variable: '--font-display',
-  display: 'swap',
+const display = localFont({
+  src: [
+    { path: './fonts/newsreader-latin.woff2', weight: '200 400', style: 'normal' },
+    { path: './fonts/newsreader-italic-latin.woff2', weight: '200 400', style: 'italic' },
+  ],
+  variable: '--font-display', display: 'swap',
 });
-
-const ui = Inter({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
-  variable: '--font-ui',
-  display: 'swap',
+const ui = localFont({
+  src: './fonts/inter-latin.woff2', weight: '300 600',
+  variable: '--font-ui', display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -45,11 +42,13 @@ export const metadata: Metadata = {
     title: `${site.brand.name} · Tu Mapa Interior`,
     description: site.brand.shortDescription,
     siteName: site.brand.name,
+    images: [{ url: "/images/hero.webp", width: 1200, height: 1500, alt: "Araceli · Tu Mapa Interior" }],
   },
   twitter: {
     card: 'summary_large_image',
     title: `${site.brand.name} · Tu Mapa Interior`,
     description: site.brand.shortDescription,
+    images: ['/images/hero.webp'],
   },
   robots: {
     // Las previsualizaciones de despliegue no se indexan.

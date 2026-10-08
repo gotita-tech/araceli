@@ -1,5 +1,6 @@
 import { Reveal } from '@/components/ui/reveal';
 import { site } from '@/lib/content';
+import { EditorialImage } from '@/components/visual/editorial-image';
 
 /** Cómo funciona una sesión: cuatro momentos, sin promesas sobre lo que ocurrirá. */
 export function SessionFlow() {
@@ -14,7 +15,8 @@ export function SessionFlow() {
           <p className="mt-6 text-lede text-ink-500">{body}</p>
         </Reveal>
 
-        <ol className="mt-16 grid gap-px overflow-hidden rounded-[1.75rem] border border-ink/8 bg-ink/8 md:grid-cols-2 lg:grid-cols-4">
+        <EditorialImage id="liberacion-emociones" className="mt-12 h-[260px] md:h-[380px]" sizes="100vw" caption />
+        <ol className="mt-10 grid gap-px overflow-hidden rounded-[1.75rem] border border-ink/8 bg-ink/8 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
             <li key={step.id} className="bg-ivory-paper">
               <Reveal delay={index * 0.06} className="flex h-full flex-col p-7 md:p-8">

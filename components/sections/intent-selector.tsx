@@ -6,6 +6,7 @@ import { useState } from 'react';
 
 import { useMap } from '@/components/map/map-provider';
 import { Reveal } from '@/components/ui/reveal';
+import { EditorialImage } from '@/components/visual/editorial-image';
 import { useReducedMotion } from '@/lib/hooks/use-reduced-motion';
 import { cn } from '@/lib/utils/cn';
 import { CALM_EASE } from '@/lib/utils/motion';
@@ -99,10 +100,11 @@ export function IntentSelector({ eyebrow, title, body, intents, modalities }: In
                     href={`/practicas/${modality.id}`}
                     className="group rounded-3xl border border-ink/8 bg-white/70 p-6 transition-all duration-400 ease-calm hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-soft"
                   >
+                    <EditorialImage id={modality.id} className="mb-6 h-[200px]" />
                     <p className="eyebrow">{modality.category}</p>
                     <h3 className="mt-3 font-serif text-title font-light text-ink-800">{modality.name}</h3>
                     <p className="mt-3 text-[0.95rem] leading-relaxed text-ink-500">{modality.claim}</p>
-                    <span className="mt-5 inline-block text-sm text-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <span className="mt-5 inline-block text-sm text-primary transition-colors duration-300 group-hover:text-ink-800">
                       Conocer esta práctica
                     </span>
                   </Link>

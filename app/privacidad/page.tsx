@@ -5,6 +5,7 @@ import { site } from '@/lib/content';
 import { DISCLAIMERS } from '@/lib/recommender/safety-rules';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/privacidad' },
   title: 'Privacidad',
   description:
     'Cómo se procesan las respuestas del Mapa Interior: en tu navegador, sin datos personales y sin publicidad comportamental.',

@@ -1,5 +1,5 @@
 import { Reveal } from '@/components/ui/reveal';
-import { publishedTestimonials, pendingTestimonials, site } from '@/lib/content';
+import { publishedTestimonials, site } from '@/lib/content';
 
 /**
  * Testimonios.
@@ -8,6 +8,7 @@ import { publishedTestimonials, pendingTestimonials, site } from '@/lib/content'
  * explícitamente vacío: nunca se inventa una persona ni una frase.
  */
 export function Testimonials() {
+  if (publishedTestimonials.length === 0) return null;
   const { eyebrow, title, body } = site.testimonialsSection;
 
   return (
@@ -34,16 +35,7 @@ export function Testimonials() {
             </Reveal>
           ))}
 
-          {pendingTestimonials.map((testimonial, index) => (
-            <Reveal key={testimonial.id} delay={(publishedTestimonials.length + index) * 0.06}>
-              <div className="flex h-full min-h-[180px] flex-col items-start justify-between rounded-[1.75rem] border border-dashed border-ink/15 bg-white/40 p-7">
-                <p className="text-sm text-ink-300">Testimonio pendiente</p>
-                <p className="mt-6 text-xs leading-relaxed text-ink-300">
-                  Se publicará cuando una persona real comparta su experiencia y autorice su uso.
-                </p>
-              </div>
-            </Reveal>
-          ))}
+
         </div>
       </div>
     </section>

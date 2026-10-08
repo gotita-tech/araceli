@@ -6,6 +6,7 @@ import { StaticRipples } from '@/components/visual/static-ripples';
 import { DISCLAIMERS } from '@/lib/recommender/safety-rules';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/practicas' },
   title: 'Prácticas',
   description:
     'Experiencias de bienestar, prácticas espirituales y métodos complementarios que acompaña Araceli, explicados con sus límites y su estado de evidencia.',
@@ -25,8 +26,8 @@ export default function PracticesPage() {
             Cada práctica, explicada con sus límites.
           </h1>
           <p className="mt-7 max-w-prose text-lede text-ink-500">
-            Cinco bloques idénticos para todas: qué es, cómo es una sesión, por qué algunas personas la eligen, lo que
-            sabemos y lo que no es. Sin promesas de curación.
+            Conoce cómo transcurre cada experiencia, qué puedes esperar y qué límites tiene. Si todavía no sabes
+            cuál elegir, puedes empezar por tus preferencias en el Mapa Interior.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">

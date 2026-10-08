@@ -1,6 +1,6 @@
 # Tu Mapa Interior — auditoría y arquitectura
 
-Documento de trabajo previo y posterior a la implementación. Recoge las decisiones
+Documento de trabajo previo y posterior a la implementación inicial. El estado actualizado del sitio, contacto e imágenes está en [la entrega de octubre de 2026](entrega-2026-10-08.md). Recoge las decisiones
 tomadas, sus motivos y los puntos que quedan abiertos.
 
 ---

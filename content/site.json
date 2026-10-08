@@ -5,38 +5,63 @@
     "tagline": "Bienestar, crecimiento personal y metafísica contemporánea",
     "shortDescription": "Un espacio para conocerte, explorar aquello que hoy quieres transformar y descubrir diferentes caminos de bienestar junto a Araceli.",
     "locale": "es-ES",
-    "siteUrl": "https://araceli.example",
+    "siteUrl": "https://araceli-five.vercel.app",
     "practitionerRole": "Terapeuta de bienestar y facilitadora de prácticas complementarias"
   },
   "contact": {
-    "configured": false,
-    "email": "",
-    "phone": "",
-    "whatsapp": "",
-    "instagram": "",
+    "configured": true,
+    "email": "arachelyestetica@gmail.com",
+    "phone": "+56982895351",
+    "whatsapp": "+56982895351",
+    "instagram": "@araceli_terapias",
     "bookingUrl": "",
     "city": "",
-    "note": "Pendiente de completar con los datos reales de Araceli antes de publicar."
+    "note": "Escríbenos para consultar horarios, ubicación y valores."
   },
   "nav": [
-    { "label": "Tu Mapa Interior", "href": "/mapa-interior" },
-    { "label": "Prácticas", "href": "/practicas" },
-    { "label": "Sobre Araceli", "href": "/sobre-araceli" },
-    { "label": "Preguntas", "href": "/#preguntas" }
+    {
+      "label": "Tu Mapa Interior",
+      "href": "/mapa-interior"
+    },
+    {
+      "label": "Prácticas",
+      "href": "/practicas"
+    },
+    {
+      "label": "Sobre Araceli",
+      "href": "/sobre-araceli"
+    },
+    {
+      "label": "Preguntas",
+      "href": "/#preguntas"
+    },
+    {
+      "label": "Contacto",
+      "href": "/conversar"
+    }
   ],
   "hero": {
-    "eyebrow": "Orientación de bienestar personalizada",
+    "eyebrow": "Bienestar · Autoconocimiento · Conexión interior",
     "title": "Tus creencias crean tu vida.",
     "subtitle": "Un espacio para conocerte, explorar aquello que hoy quieres transformar y descubrir diferentes caminos de bienestar junto a Araceli.",
-    "primaryCta": { "label": "Descubrir mi Mapa Interior", "href": "/mapa-interior" },
-    "secondaryCta": { "label": "Explorar terapias", "href": "/practicas" },
+    "primaryCta": {
+      "label": "Descubrir mi Mapa Interior",
+      "href": "/mapa-interior"
+    },
+    "secondaryCta": {
+      "label": "Explorar prácticas",
+      "href": "/practicas"
+    },
     "note": "Experiencias de bienestar y prácticas complementarias. No son intervenciones médicas ni psicológicas."
   },
   "noNeedToKnow": {
     "eyebrow": "Quizás no necesitas saber el nombre de la terapia",
     "title": "No necesitas saber qué terapia elegir.",
     "body": "Puedes llegar simplemente sabiendo cómo te gustaría sentirte o qué te gustaría explorar. Tu Mapa Interior te ayudará a conocer las distintas posibilidades.",
-    "cta": { "label": "Crear mi mapa", "href": "/mapa-interior" }
+    "cta": {
+      "label": "Crear mi mapa",
+      "href": "/mapa-interior"
+    }
   },
   "mapTeaser": {
     "eyebrow": "Tu Mapa Interior",
@@ -47,30 +72,94 @@
       "Sin nombre, sin datos personales, sin historia clínica.",
       "Puedes terminar sin guardar nada."
     ],
-    "cta": { "label": "Descubrir mi Mapa Interior", "href": "/mapa-interior" }
+    "cta": {
+      "label": "Descubrir mi Mapa Interior",
+      "href": "/mapa-interior"
+    }
   },
   "intentSelector": {
     "eyebrow": "Empieza por la intención",
     "title": "¿Qué te gustaría explorar hoy?",
     "body": "Elige una intención y verás qué prácticas suelen acompañar mejor ese momento. Es una orientación, no una prescripción.",
     "intents": [
-      { "id": "calm", "label": "Bajar el ritmo", "description": "Buscas una pausa, silencio y descanso del día a día.", "modalities": ["reiki", "barras-de-access"] },
-      { "id": "emotions", "label": "Poner palabras a lo que siento", "description": "Te gustaría explorar tu mundo emocional con acompañamiento.", "modalities": ["liberacion-emociones", "thetahealing"] },
-      { "id": "patterns", "label": "Mirar patrones que se repiten", "description": "Quieres observar creencias y decisiones que vuelven una y otra vez.", "modalities": ["thetahealing", "metodo-yuen"] },
-      { "id": "body", "label": "Regalarme un cuidado", "description": "Te apetece una experiencia corporal suave y de autocuidado.", "modalities": ["access-facelift", "reiki"] },
-      { "id": "spiritual", "label": "Explorar lo espiritual", "description": "Te interesa una experiencia simbólica, intuitiva o ritual.", "modalities": ["canalizacion", "limpieza-energetica"] },
-      { "id": "unknown", "label": "Todavía no lo sé", "description": "No hace falta tenerlo claro. El mapa está pensado justo para esto.", "modalities": [] }
+      {
+        "id": "calm",
+        "label": "Bajar el ritmo",
+        "description": "Buscas una pausa, silencio y descanso del día a día.",
+        "modalities": [
+          "reiki",
+          "barras-de-access"
+        ]
+      },
+      {
+        "id": "emotions",
+        "label": "Poner palabras a lo que siento",
+        "description": "Te gustaría explorar tu mundo emocional con acompañamiento.",
+        "modalities": [
+          "liberacion-emociones",
+          "thetahealing"
+        ]
+      },
+      {
+        "id": "patterns",
+        "label": "Mirar patrones que se repiten",
+        "description": "Quieres observar creencias y decisiones que vuelven una y otra vez.",
+        "modalities": [
+          "thetahealing",
+          "metodo-yuen"
+        ]
+      },
+      {
+        "id": "body",
+        "label": "Regalarme un cuidado",
+        "description": "Te apetece una experiencia corporal suave y de autocuidado.",
+        "modalities": [
+          "access-facelift",
+          "reiki"
+        ]
+      },
+      {
+        "id": "spiritual",
+        "label": "Explorar lo espiritual",
+        "description": "Te interesa una experiencia simbólica, intuitiva o ritual.",
+        "modalities": [
+          "canalizacion",
+          "limpieza-energetica"
+        ]
+      },
+      {
+        "id": "unknown",
+        "label": "Todavía no lo sé",
+        "description": "No hace falta tenerlo claro. El mapa está pensado justo para esto.",
+        "modalities": []
+      }
     ]
   },
   "modalitiesSection": {
     "eyebrow": "Prácticas",
     "title": "Nueve maneras de acompañar un mismo momento.",
-    "body": "Las agrupamos por el tipo de experiencia que ofrecen, no por su eficacia. La agrupación describe el enfoque de este sitio y no supone equivalencias científicas entre las modalidades.",
+    "body": "Silencio, conversación, contacto suave o exploración espiritual. Conoce cada enfoque y elige con información clara, a tu ritmo.",
     "groups": [
-      { "id": "pausa-relajacion", "label": "Pausa y relajación", "description": "Experiencias para bajar el ritmo y descansar." },
-      { "id": "creencias-autoconocimiento", "label": "Creencias y autoconocimiento", "description": "Espacios de conversación, observación y exploración personal." },
-      { "id": "experiencias-corporales", "label": "Experiencias corporales", "description": "Prácticas con contacto suave o trabajo sobre el cuerpo." },
-      { "id": "exploracion-espiritual", "label": "Exploración espiritual", "description": "Experiencias simbólicas y rituales de bienestar." }
+      {
+        "id": "pausa-relajacion",
+        "label": "Pausa y relajación",
+        "description": "Experiencias para bajar el ritmo y descansar."
+      },
+      {
+        "id": "creencias-autoconocimiento",
+        "label": "Creencias y autoconocimiento",
+        "description": "Espacios de conversación, observación y exploración personal."
+      },
+      {
+        "id": "experiencias-corporales",
+        "label": "Experiencias corporales",
+        "description": "Prácticas con contacto suave o trabajo sobre el cuerpo."
+      },
+      {
+        "id": "exploracion-espiritual",
+        "label": "Exploración espiritual",
+        "description": "Experiencias simbólicas y rituales de bienestar."
+      }
     ]
   },
   "sessionFlow": {
@@ -78,10 +167,26 @@
     "title": "Cómo es una sesión, paso a paso.",
     "body": "Cada modalidad tiene sus particularidades, pero el marco de acompañamiento es siempre el mismo.",
     "steps": [
-      { "id": "before", "title": "Antes", "body": "Una conversación breve para entender qué te gustaría explorar y responder tus dudas. Nunca hace falta llegar con un objetivo cerrado." },
-      { "id": "during", "title": "Durante", "body": "Permaneces vestido/a y en una posición cómoda. Puedes decir en cualquier momento qué prefieres, pedir una pausa o cambiar de opinión sobre el contacto físico." },
-      { "id": "after", "title": "Después", "body": "Un momento para volver al ritmo habitual y comentar cómo te resultó la experiencia, sin conclusiones obligatorias." },
-      { "id": "review", "title": "Revisión", "body": "Después de tus primeros encuentros, lo más importante es revisar cómo te ha resultado la experiencia antes de decidir cómo continuar." }
+      {
+        "id": "before",
+        "title": "Antes",
+        "body": "Una conversación breve para entender qué te gustaría explorar y responder tus dudas. Nunca hace falta llegar con un objetivo cerrado."
+      },
+      {
+        "id": "during",
+        "title": "Durante",
+        "body": "Permaneces vestido/a y en una posición cómoda. Puedes decir en cualquier momento qué prefieres, pedir una pausa o cambiar de opinión sobre el contacto físico."
+      },
+      {
+        "id": "after",
+        "title": "Después",
+        "body": "Un momento para volver al ritmo habitual y comentar cómo te resultó la experiencia, sin conclusiones obligatorias."
+      },
+      {
+        "id": "review",
+        "title": "Revisión",
+        "body": "Después de tus primeros encuentros, lo más importante es revisar cómo te ha resultado la experiencia antes de decidir cómo continuar."
+      }
     ]
   },
   "philosophy": {
@@ -90,15 +195,24 @@
     "body": "Es la frase que ordena este trabajo. No como una promesa, sino como una invitación: observar aquello que damos por cierto sobre nosotros mismos suele abrir espacio para elegir de otra manera.",
     "quote": "No hace falta creer en nada para empezar a mirar con curiosidad.",
     "columns": [
-      { "title": "Sin dogmas", "body": "Puedes recorrer todo este sitio sin creer previamente en ninguna práctica. Nada de lo que hay aquí intenta convencerte." },
-      { "title": "Con límites claros", "body": "Aquí encontrarás experiencias de bienestar, prácticas espirituales y métodos complementarios. No hay intervenciones médicas ni psicológicas." },
-      { "title": "A tu ritmo", "body": "Una primera experiencia siempre es suficiente para empezar. Continuar es una decisión que se toma después, nunca antes." }
+      {
+        "title": "Sin dogmas",
+        "body": "Puedes recorrer todo este sitio sin creer previamente en ninguna práctica. Nada de lo que hay aquí intenta convencerte."
+      },
+      {
+        "title": "Con límites claros",
+        "body": "Aquí encontrarás experiencias de bienestar, prácticas espirituales y métodos complementarios. No hay intervenciones médicas ni psicológicas."
+      },
+      {
+        "title": "A tu ritmo",
+        "body": "Una primera experiencia siempre es suficiente para empezar. Continuar es una decisión que se toma después, nunca antes."
+      }
     ]
   },
   "testimonialsSection": {
     "eyebrow": "Testimonios",
     "title": "Experiencias de personas reales.",
-    "body": "Sólo publicamos testimonios entregados por las personas que han vivido las sesiones. Los espacios pendientes se completarán con material real."
+    "body": "Experiencias compartidas con autorización por quienes han vivido una sesión."
   },
   "faqSection": {
     "eyebrow": "Preguntas frecuentes",
@@ -108,18 +222,36 @@
     "eyebrow": "Tu Mapa Interior",
     "title": "¿Empezamos por conocerte?",
     "body": "Nueve preguntas, una figura que se dibuja contigo y una orientación clara sobre qué modalidades podrían resultarte compatibles.",
-    "primaryCta": { "label": "Descubrir mi Mapa Interior", "href": "/mapa-interior" },
-    "secondaryCta": { "label": "Conversar con Araceli", "href": "/conversar" }
+    "primaryCta": {
+      "label": "Descubrir mi Mapa Interior",
+      "href": "/mapa-interior"
+    },
+    "secondaryCta": {
+      "label": "Conversar con Araceli",
+      "href": "/conversar"
+    }
   },
   "footer": {
     "note": "Las prácticas que aparecen en este sitio son experiencias de bienestar, prácticas espirituales o métodos complementarios. No son intervenciones médicas ni psicológicas, no diagnostican, no tratan enfermedades y no sustituyen la atención sanitaria.",
     "links": [
-      { "label": "Privacidad", "href": "/privacidad" },
-      { "label": "Prácticas", "href": "/practicas" },
-      { "label": "Sobre Araceli", "href": "/sobre-araceli" },
-      { "label": "Administración", "href": "/admin" }
+      {
+        "label": "Privacidad",
+        "href": "/privacidad"
+      },
+      {
+        "label": "Prácticas",
+        "href": "/practicas"
+      },
+      {
+        "label": "Sobre Araceli",
+        "href": "/sobre-araceli"
+      },
+      {
+        "label": "Contacto",
+        "href": "/conversar"
+      }
     ],
-    "credit": "Diseño y desarrollo: experiencia digital Tu Mapa Interior."
+    "credit": "Retrato real de Araceli. Imágenes de ambiente ilustradas."
   },
   "floatingButton": {
     "tooltip": "Descubre tu Mapa Interior",
@@ -129,11 +261,26 @@
     "title": "Privacidad del Mapa Interior",
     "intro": "Tu Mapa Interior está diseñado para funcionar con la menor cantidad de datos posible.",
     "points": [
-      { "title": "Se procesa en tu navegador", "body": "Las respuestas del cuestionario y el cálculo de afinidad ocurren localmente, en tu dispositivo. No se envían a ningún servidor para generar el resultado." },
-      { "title": "No pedimos datos personales", "body": "El cuestionario no solicita nombre completo, documento de identidad, historia clínica, diagnósticos, medicación ni dirección." },
-      { "title": "Guardar es opcional", "body": "Sólo se guarda una copia local de tu mapa si lo pides explícitamente. Siempre puedes continuar sin guardar y borrar lo guardado con un clic." },
-      { "title": "Sin publicidad comportamental", "body": "No utilizamos tus respuestas para segmentación publicitaria ni las compartimos con terceros con fines comerciales." },
-      { "title": "Analítica respetuosa", "body": "Si se activa analítica, será sin cookies, sin identificadores personales y respetando las señales de no rastrear del navegador." }
+      {
+        "title": "Se procesa en tu navegador",
+        "body": "Las respuestas del cuestionario y el cálculo de afinidad ocurren localmente, en tu dispositivo. No se envían a ningún servidor para generar el resultado."
+      },
+      {
+        "title": "No pedimos datos personales",
+        "body": "El cuestionario no solicita nombre completo, documento de identidad, historia clínica, diagnósticos, medicación ni dirección."
+      },
+      {
+        "title": "Guardar es opcional",
+        "body": "Sólo se guarda una copia local de tu mapa si lo pides explícitamente. Siempre puedes continuar sin guardar y borrar lo guardado con un clic."
+      },
+      {
+        "title": "Sin publicidad comportamental",
+        "body": "No utilizamos tus respuestas para segmentación publicitaria ni las compartimos con terceros con fines comerciales."
+      },
+      {
+        "title": "Analítica respetuosa",
+        "body": "Si se activa analítica, será sin cookies, sin identificadores personales y respetando las señales de no rastrear del navegador."
+      }
     ]
   }
 }

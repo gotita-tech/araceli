@@ -1,23 +1,108 @@
 {
   "version": "1.0.0",
-  "headline": "Años explorando distintas maneras de acompañar procesos personales.",
-  "lede": "El trabajo de Araceli no empezó con una técnica, sino con una pregunta que se fue repitiendo: qué necesita cada persona para sentirse acompañada mientras mira aquello que quiere transformar.",
+  "headline": "Un espacio para detenerte, escucharte y explorar.",
+  "lede": "Soy Araceli, fundadora de Tiempo Interior. Te invito a un espacio de bienestar, autoconocimiento y exploración espiritual, donde el punto de partida es aquello que hoy te gustaría conocer de ti.",
   "paragraphs": [
-    "Con el tiempo, esa pregunta la llevó a formarse en prácticas muy distintas entre sí: algunas trabajan desde el silencio y el contacto suave, otras desde la conversación, otras desde lo simbólico y ritual. Ninguna sustituye a las demás y ninguna sirve para todo el mundo.",
-    "Por eso este sitio no empieza presentando una técnica, sino tus preferencias. La modalidad es una consecuencia, no un punto de partida.",
-    "Todo lo que ofrece se enmarca en el bienestar, el crecimiento personal y la exploración espiritual. Cuando una situación requiere atención sanitaria, lo que corresponde es acudir a un profesional de salud cualificado."
+    "Puedes acercarte buscando una pausa, una conversación o una experiencia espiritual. Aquí encontrarás distintas prácticas, explicadas con claridad para que puedas decidir qué se ajusta a tus preferencias.",
+    "El acompañamiento parte de la escucha y el respeto por tus límites. Puedes expresar tus preferencias sobre el contacto físico, pedir una pausa y decidir cómo continuar.",
+    "Todo lo que se ofrece se enmarca en el bienestar y la exploración personal. Cuando una situación requiere atención sanitaria, lo que corresponde es acudir a un profesional de salud cualificado."
   ],
-  "portrait": { "src": "", "alt": "Retrato de Araceli", "status": "pending" },
+  "portrait": {
+    "src": "/images/araceli-retrato.webp",
+    "alt": "Araceli, en una fotografía publicada en su perfil Tiempo Interior",
+    "status": "published"
+  },
   "timelineNote": "Los datos de formación se completarán con la información real que entregue Araceli. Ninguna fecha, escuela ni certificación se publica sin confirmación.",
   "timeline": [
-    { "id": "f1", "year": "", "practice": "Reiki", "school": "", "certification": "", "location": "", "photo": "", "status": "pending" },
-    { "id": "f2", "year": "", "practice": "ThetaHealing", "school": "", "certification": "", "location": "", "photo": "", "status": "pending" },
-    { "id": "f3", "year": "", "practice": "Barras de Access", "school": "", "certification": "", "location": "", "photo": "", "status": "pending" },
-    { "id": "f4", "year": "", "practice": "Access Facelift", "school": "", "certification": "", "location": "", "photo": "", "status": "pending" },
-    { "id": "f5", "year": "", "practice": "Método Yuen", "school": "", "certification": "", "location": "", "photo": "", "status": "pending" },
-    { "id": "f6", "year": "", "practice": "Liberación de emociones", "school": "", "certification": "", "location": "", "photo": "", "status": "pending" },
-    { "id": "f7", "year": "", "practice": "Canalización", "school": "", "certification": "", "location": "", "photo": "", "status": "pending" },
-    { "id": "f8", "year": "", "practice": "Limpieza energética", "school": "", "certification": "", "location": "", "photo": "", "status": "pending" },
-    { "id": "f9", "year": "", "practice": "Biomagnetismo", "school": "", "certification": "", "location": "", "photo": "", "status": "pending" }
+    {
+      "id": "f1",
+      "year": "",
+      "practice": "Reiki",
+      "school": "",
+      "certification": "",
+      "location": "",
+      "photo": "",
+      "status": "pending"
+    },
+    {
+      "id": "f2",
+      "year": "",
+      "practice": "ThetaHealing",
+      "school": "",
+      "certification": "",
+      "location": "",
+      "photo": "",
+      "status": "pending"
+    },
+    {
+      "id": "f3",
+      "year": "",
+      "practice": "Barras de Access",
+      "school": "",
+      "certification": "",
+      "location": "",
+      "photo": "",
+      "status": "pending"
+    },
+    {
+      "id": "f4",
+      "year": "",
+      "practice": "Access Facelift",
+      "school": "",
+      "certification": "",
+      "location": "",
+      "photo": "",
+      "status": "pending"
+    },
+    {
+      "id": "f5",
+      "year": "",
+      "practice": "Método Yuen",
+      "school": "",
+      "certification": "",
+      "location": "",
+      "photo": "",
+      "status": "pending"
+    },
+    {
+      "id": "f6",
+      "year": "",
+      "practice": "Liberación de emociones",
+      "school": "",
+      "certification": "",
+      "location": "",
+      "photo": "",
+      "status": "pending"
+    },
+    {
+      "id": "f7",
+      "year": "",
+      "practice": "Canalización",
+      "school": "",
+      "certification": "",
+      "location": "",
+      "photo": "",
+      "status": "pending"
+    },
+    {
+      "id": "f8",
+      "year": "",
+      "practice": "Limpieza energética",
+      "school": "",
+      "certification": "",
+      "location": "",
+      "photo": "",
+      "status": "pending"
+    },
+    {
+      "id": "f9",
+      "year": "",
+      "practice": "Biomagnetismo",
+      "school": "",
+      "certification": "",
+      "location": "",
+      "photo": "",
+      "status": "pending"
+    }
   ]
 }

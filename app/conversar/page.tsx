@@ -2,10 +2,12 @@ import type { Metadata } from 'next';
 
 import { Button } from '@/components/ui/button';
 import { StaticRipples } from '@/components/visual/static-ripples';
+import { EditorialImage } from '@/components/visual/editorial-image';
 import { site } from '@/lib/content';
 import { DISCLAIMERS } from '@/lib/recommender/safety-rules';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/conversar' },
   title: 'Conversar con Araceli',
   description:
     'Una conversación breve para resolver dudas y decidir juntos qué experiencia puede encajar mejor con tu momento.',
@@ -49,6 +51,7 @@ export default function ContactPage() {
           </p>
         </div>
 
+        <EditorialImage id="liberacion-emociones" className="mt-12 h-[240px] md:h-[340px]" sizes="100vw" caption />
         {channels.length > 0 ? (
           <div className="mt-14 grid max-w-3xl gap-4 sm:grid-cols-2">
             {channels.map((channel) => (
@@ -58,7 +61,7 @@ export default function ContactPage() {
                 className="group rounded-[1.75rem] border border-ink/8 bg-white/70 p-7 transition-all duration-400 ease-calm hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-soft"
               >
                 <p className="eyebrow">{channel.label}</p>
-                <p className="mt-3 text-[1.05rem] text-ink-700">{channel.value}</p>
+                <p className="mt-3 break-words text-[1.05rem] text-ink-700">{channel.value}</p>
               </a>
             ))}
           </div>

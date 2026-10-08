@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Pill } from '@/components/ui/pill';
 import { Reveal } from '@/components/ui/reveal';
 import { StaticRipples } from '@/components/visual/static-ripples';
+import { EditorialImage } from '@/components/visual/editorial-image';
 import { EVIDENCE_LABELS, MODALITIES, getModalityContent } from '@/lib/content';
 import { getModalityProfile } from '@/lib/recommender/modalities';
 import { DISCLAIMERS } from '@/lib/recommender/safety-rules';
@@ -23,6 +24,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: modality.name,
+    alternates: { canonical: `/practicas/${modality.id}` },
     description: `${modality.claim} ${modality.blocks.whatItIs}`.slice(0, 155),
   };
 }
@@ -69,6 +71,7 @@ export default async function ModalityPage({ params }: PageProps) {
             {modality.name}
           </h1>
           <p className="mt-6 max-w-2xl font-serif text-title font-light italic text-ink-600">{modality.claim}</p>
+          <EditorialImage id={modality.id} className="mt-10 h-[260px] md:h-[400px]" sizes="100vw" priority caption />
         </div>
       </header>
 

@@ -1,11 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 
 import { useMap } from '@/components/map/map-provider';
-import { RippleMark } from '@/components/visual/ripple-mark';
 import { useFocusTrap } from '@/lib/hooks/use-focus-trap';
 import { useLockScroll } from '@/lib/hooks/use-lock-scroll';
 import { usePresence } from '@/lib/hooks/use-presence';
@@ -47,11 +47,11 @@ export function Header({ nav, brandName }: { nav: NavLink[]; brandName: string }
     >
       <div className="shell flex h-[68px] items-center justify-between gap-6">
         <Link href="/" className="group flex items-center gap-3 rounded-full py-1 pr-3">
-          <RippleMark className="h-7 w-7 text-primary transition-transform duration-700 ease-calm group-hover:scale-105" />
-          <span className="font-serif text-[1.2rem] font-light tracking-tight text-ink-800">{brandName}</span>
+          <Image src="/images/tiempo-interior-logo.webp" alt="" width={38} height={38} className="rounded-full" />
+          <span className="font-serif text-[1.2rem] font-light tracking-tight text-ink-800">{brandName}<span className="block font-sans text-[9px] uppercase tracking-[0.15em] text-ink-400">Tiempo Interior</span></span>
         </Link>
 
-        <nav aria-label="Principal" className="hidden items-center gap-8 md:flex">
+        <nav aria-label="Principal" className="hidden items-center gap-5 lg:gap-7 lg:flex">
           {nav.map((link) => (
             <Link
               key={link.href}
@@ -78,7 +78,7 @@ export function Header({ nav, brandName }: { nav: NavLink[]; brandName: string }
           onClick={() => setMenuOpen((value) => !value)}
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
-          className="flex h-11 w-11 items-center justify-center rounded-full text-ink-600 transition-colors hover:bg-ink/5 md:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-full text-ink-600 transition-colors hover:bg-ink/5 lg:hidden"
         >
           <span className="sr-only">{menuOpen ? 'Cerrar menú' : 'Abrir menú'}</span>
           <span aria-hidden className="relative block h-3 w-5">
@@ -103,7 +103,7 @@ export function Header({ nav, brandName }: { nav: NavLink[]; brandName: string }
           ref={menuRef}
           id="mobile-menu"
           className={cn(
-            'border-t border-ink/6 bg-ivory-paper/97 px-5 pb-8 pt-4 backdrop-blur-xl transition-all duration-300 ease-calm md:hidden',
+            'border-t border-ink/6 bg-ivory-paper/97 px-5 pb-8 pt-4 backdrop-blur-xl transition-all duration-300 ease-calm lg:hidden',
             menuVisible ? 'translate-y-0 opacity-100' : '-translate-y-2 opacity-0',
           )}
         >
@@ -112,6 +112,7 @@ export function Header({ nav, brandName }: { nav: NavLink[]; brandName: string }
                 <Link
                   key={link.href}
                   href={link.href}
+                  onClick={() => setMenuOpen(false)}
                   className="flex min-h-[52px] items-center border-b border-ink/6 text-[1.05rem] text-ink-700"
                 >
                   {link.label}

@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import { Pill } from '@/components/ui/pill';
 import { Reveal } from '@/components/ui/reveal';
-import { RippleMark } from '@/components/visual/ripple-mark';
+import { EditorialImage } from '@/components/visual/editorial-image';
 import { EVIDENCE_LABELS, modalitiesByGroup, site, type ModalityContent } from '@/lib/content';
 import { cn } from '@/lib/utils/cn';
 
@@ -76,15 +76,11 @@ function ModalityCard({ modality, large = false }: { modality: ModalityContent; 
       className={cn(
         'group relative flex h-full flex-col justify-between overflow-hidden rounded-[1.75rem] border border-ink/8 bg-white/75 p-7 transition-all duration-500 ease-calm',
         'hover:-translate-y-1 hover:border-primary/25 hover:bg-white hover:shadow-lift',
-        large && 'md:p-9',
+        large && 'md:p-7',
       )}
     >
-      <RippleMark
-        className={cn(
-          'absolute -right-8 -top-8 h-32 w-32 text-primary opacity-[0.07] transition-opacity duration-700 group-hover:opacity-[0.13]',
-          large && 'h-44 w-44',
-        )}
-      />
+      <EditorialImage id={modality.id} className="-mx-7 -mt-7 mb-7 h-[230px] " sizes="(max-width: 768px) 100vw, 50vw" />
+
 
       <div className="relative">
         <Pill>{modality.category}</Pill>

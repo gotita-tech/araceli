@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { RippleMark } from '@/components/visual/ripple-mark';
+import Image from 'next/image';
 import { site } from '@/lib/content';
 
 export function Footer() {
@@ -12,7 +12,7 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
           <div>
             <Link href="/" className="inline-flex items-center gap-3">
-              <RippleMark className="h-7 w-7 text-primary" />
+              <Image src="/images/tiempo-interior-logo.webp" alt="" width={38} height={38} className="rounded-full" />
               <span className="font-serif text-[1.2rem] font-light text-ink-800">{site.brand.name}</span>
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-ink-400">{site.brand.tagline}</p>
@@ -30,6 +30,7 @@ export function Footer() {
                 </Link>
               ))}
             </nav>
+            <a href="https://wa.me/56982895351" className="link-underline text-sm text-primary">WhatsApp · +56 9 8289 5351 ↗</a>
           </div>
         </div>
 
