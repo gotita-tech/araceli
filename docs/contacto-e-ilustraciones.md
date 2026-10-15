@@ -4,7 +4,7 @@ El usuario aprobó publicar la actualización del catálogo y pidió añadir bot
 
 - WhatsApp: `https://wa.me/56982895351`, obtenido del contacto ya configurado.
 - Instagram: `https://www.instagram.com/araceli_terapias/`, obtenido del perfil confirmado.
-- Los accesos mantienen el tamaño de 54 px y el aspecto de cristal del mapa. Incluyen nombres accesibles, foco y apertura en otra pestaña. Se ocultan mientras el modal del mapa está abierto para no interferir con el diálogo.
+- Los accesos mantienen el tamaño de 54 px y el aspecto de cristal del mapa. Incluyen nombres accesibles, foco y apertura en otra pestaña. Los enlaces de contacto se ocultan mientras el modal del mapa está abierto. Su botón de apertura permanece detrás de la capa modal para poder recuperar el foco al cerrarla.
 - Se añadieron siete ilustraciones creadas con la herramienta integrada `image_gen`. Las personas son ficticias; no representan a Araceli ni testimonios o sesiones reales.
 - Barras de Access muestra un contacto suave en la cabeza; ThetaHealing muestra meditación y escucha. Las demás composiciones utilizan metáforas visuales y no pretenden documentar un protocolo no confirmado.
 - La paleta azul y marfil mantiene coherencia con el sitio. Las tarjetas y fichas identifican las imágenes como ilustraciones de referencia hechas con IA.

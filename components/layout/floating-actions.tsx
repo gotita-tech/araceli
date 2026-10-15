@@ -15,9 +15,9 @@ export function FloatingActions({ whatsapp, instagram }: { whatsapp: string; ins
   return (
     <nav
       aria-label="Accesos rápidos de Araceli"
-      className={`pointer-events-none fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-[max(1.25rem,env(safe-area-inset-right))] z-50 flex-col items-end gap-2.5 ${isOpen ? 'hidden' : 'flex'}`}
+      className="pointer-events-none fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-[max(1.25rem,env(safe-area-inset-right))] z-50 flex flex-col items-end gap-2.5"
     >
-      {instagramHref ? (
+      {!isOpen && instagramHref ? (
         <ContactButton href={instagramHref} label="Ver el Instagram de Araceli" tooltip={`Instagram · ${instagram}`}>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true" className="h-6 w-6">
             <rect x="3" y="3" width="18" height="18" rx="5" />
@@ -26,7 +26,7 @@ export function FloatingActions({ whatsapp, instagram }: { whatsapp: string; ins
           </svg>
         </ContactButton>
       ) : null}
-      {whatsappHref ? (
+      {!isOpen && whatsappHref ? (
         <ContactButton href={whatsappHref} label="Escribir a Araceli por WhatsApp" tooltip="Conversar por WhatsApp">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="h-7 w-7 text-emerald-700">
             <path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.7l1.5-4.8a8.5 8.5 0 1 1 16-4.2Z" />
