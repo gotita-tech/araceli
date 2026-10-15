@@ -65,7 +65,7 @@ export default async function ModalityPage({ params }: PageProps) {
             {modality.name}
           </h1>
           <p className="mt-6 max-w-2xl font-serif text-title font-light italic text-ink-600">{modality.claim}</p>
-          <EditorialImage id={modality.id} className="mt-10 h-[260px] md:h-[400px]" sizes="100vw" priority caption />
+          <EditorialImage id={modality.id} className="mt-10 aspect-[16/9]" sizes="100vw" priority caption />
         </div>
       </header>
 

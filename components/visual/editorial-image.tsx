@@ -1,21 +1,25 @@
 import Image from 'next/image';
 
 const descriptions: Record<string, string> = {
-  'barras-de-access': 'Una almohada de lino en un ambiente tranquilo',
-  thetahealing: 'Un cuaderno junto a un sillón para la introspección',
-  'metodo-one': 'Piedras de río sobre una superficie de piedra clara',
-  'metodo-rsame': 'Lino y luz natural en un espacio tranquilo',
-  'liberacion-emociones': 'Dos sillas preparadas para una conversación',
-  'regresion-vidas-pasadas': 'Una vela junto a un cuaderno en un ambiente sereno',
-  'limpieza-energetica': 'Una ventana abierta y hojas de salvia bajo luz natural',
+  'barras-de-access': 'Ilustración de referencia: contacto suave en la cabeza de una persona vestida y recostada',
+  thetahealing: 'Ilustración de referencia: dos personas en un momento de meditación y escucha',
+  'metodo-one': 'Ilustración conceptual: atención y gesto de manos en una práctica de enfoque energético',
+  'metodo-rsame': 'Ilustración simbólica: una persona en actitud contemplativa rodeada de formas azules',
+  'liberacion-emociones': 'Ilustración simbólica de exploración emocional, con una persona y trazos que se desenredan',
+  'regresion-vidas-pasadas': 'Ilustración simbólica: una persona con los ojos cerrados y arcos que evocan relatos e imaginación',
+  'limpieza-energetica': 'Ilustración simbólica de una persona y un espacio luminoso como referencia de una práctica espiritual',
   hero: 'Ondas de agua en un cuenco de piedra bajo la luz del sol',
 };
 
-// Reutilizamos escenas ambientales existentes, sin presentarlas como sesiones.
+// Cada práctica tiene una ilustración propia. No representa a Araceli ni una sesión real.
 const imageSources: Record<string, string> = {
-  'metodo-one': 'metodo-yuen',
-  'metodo-rsame': 'reiki',
-  'regresion-vidas-pasadas': 'canalizacion',
+  'barras-de-access': 'barras-de-access-referencia',
+  thetahealing: 'thetahealing-referencia',
+  'metodo-one': 'metodo-one-referencia',
+  'metodo-rsame': 'metodo-rsame-referencia',
+  'liberacion-emociones': 'liberacion-emociones-referencia',
+  'limpieza-energetica': 'limpieza-energetica-referencia',
+  'regresion-vidas-pasadas': 'regresion-vidas-pasadas-referencia',
 };
 
 /** Escenas conceptuales generadas; nunca representan a Araceli ni sus sesiones. */
@@ -27,7 +31,7 @@ export function EditorialImage({ id, className = '', priority = false, sizes = '
       <div className="relative h-full min-h-[180px] overflow-hidden rounded-[1.5rem]">
         <Image src={`/images/${imageSources[id] ?? id}.webp`} alt={descriptions[id] ?? 'Ambiente de bienestar'} fill sizes={sizes} priority={priority} className="object-cover transition-transform duration-700 group-hover:scale-[1.035]" />
       </div>
-      {caption ? <figcaption className="mt-3 text-xs text-ink-400">Imagen de ambiente · ilustración generada</figcaption> : null}
+      {caption ? <figcaption className="mt-3 text-xs text-ink-400">{imageSources[id] ? 'Ilustración de referencia creada con IA · no representa una sesión real' : 'Imagen de ambiente · ilustración generada'}</figcaption> : null}
     </figure>
   );
 }

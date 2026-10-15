@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
 
-import { FloatingMapButton } from '@/components/map/floating-map-button';
+import { FloatingActions } from '@/components/layout/floating-actions';
 import { MapModal } from '@/components/map/map-modal';
 import { MapProvider } from '@/components/map/map-provider';
 import { Footer } from '@/components/layout/footer';
@@ -104,7 +104,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
           </main>
           <Footer />
-          <FloatingMapButton />
+          <FloatingActions
+            whatsapp={site.contact.configured ? site.contact.whatsapp : ''}
+            instagram={site.contact.instagram}
+          />
           <MapModal />
         </MapProvider>
       </body>

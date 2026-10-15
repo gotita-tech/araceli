@@ -79,8 +79,8 @@ function ModalityCard({ modality, large = false }: { modality: ModalityContent; 
         large && 'md:p-7',
       )}
     >
-      <EditorialImage id={modality.id} className="-mx-7 -mt-7 mb-7 h-[230px] " sizes="(max-width: 768px) 100vw, 50vw" />
-
+      <EditorialImage id={modality.id} className="-mx-7 -mt-7 mb-7 aspect-[16/9]" sizes="(max-width: 768px) 100vw, (min-width: 768px) 90vw" />
+      <p className="mb-4 text-[0.6875rem] text-ink-400">Ilustración de referencia · IA</p>
 
       <div className="relative">
         <Pill>{modality.category}</Pill>
