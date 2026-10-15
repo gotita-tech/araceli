@@ -34,11 +34,11 @@ export const metadata: Metadata = {
   },
   description: site.brand.shortDescription,
   applicationName: `${site.brand.name} · Tu Mapa Interior`,
-  keywords: ['bienestar', 'crecimiento personal', 'prácticas complementarias', 'Reiki', 'ThetaHealing', 'meditación'],
+  keywords: ['Araceli Terapias', 'Llolleo', 'San Antonio', 'prácticas complementarias', 'ThetaHealing', 'Barras de Access'],
   authors: [{ name: site.brand.name }],
   openGraph: {
     type: 'website',
-    locale: 'es_ES',
+    locale: 'es_CL',
     title: `${site.brand.name} · Tu Mapa Interior`,
     description: site.brand.shortDescription,
     siteName: site.brand.name,

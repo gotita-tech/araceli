@@ -13,9 +13,9 @@ import { cn } from '@/lib/utils/cn';
  * la agrupación describe el enfoque del sitio, no equivalencias científicas.
  */
 const SPANS: Record<string, string[]> = {
-  'pausa-relajacion': ['md:col-span-4', 'md:col-span-2'],
-  'creencias-autoconocimiento': ['md:col-span-2', 'md:col-span-2', 'md:col-span-2'],
-  'experiencias-corporales': ['md:col-span-2', 'md:col-span-4'],
+  'pausa-relajacion': ['md:col-span-6'],
+  'creencias-autoconocimiento': ['md:col-span-3', 'md:col-span-3'],
+  'practicas-energeticas': ['md:col-span-3', 'md:col-span-3'],
   'exploracion-espiritual': ['md:col-span-3', 'md:col-span-3'],
 };
 
@@ -93,9 +93,9 @@ function ModalityCard({ modality, large = false }: { modality: ModalityContent; 
       </div>
 
       <div className="relative mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-ink-300">
-        <span>{modality.practical.durationMinutes} min</span>
+        <span>{modality.practical.durationMinutes === null ? 'Duración a consultar' : `${modality.practical.durationMinutes} min`}</span>
         <span aria-hidden>·</span>
-        <span>{modality.practical.formats.join(' · ')}</span>
+        <span>{modality.practical.formats.length ? modality.practical.formats.join(' · ') : 'Modalidad a consultar'}</span>
         <span aria-hidden>·</span>
         <span>{EVIDENCE_LABELS[modality.evidenceLevel]}</span>
       </div>

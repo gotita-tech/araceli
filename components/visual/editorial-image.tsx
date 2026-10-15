@@ -1,16 +1,21 @@
 import Image from 'next/image';
 
 const descriptions: Record<string, string> = {
-  reiki: 'Lino y luz natural en un espacio de descanso',
   'barras-de-access': 'Una almohada de lino en un ambiente tranquilo',
   thetahealing: 'Un cuaderno junto a un sillón para la introspección',
-  'metodo-yuen': 'Piedras de río sobre una superficie de piedra clara',
+  'metodo-one': 'Piedras de río sobre una superficie de piedra clara',
+  'metodo-rsame': 'Lino y luz natural en un espacio tranquilo',
   'liberacion-emociones': 'Dos sillas preparadas para una conversación',
-  'access-facelift': 'Una toalla y un cuenco de agua para el autocuidado',
-  biomagnetismo: 'Dos imanes sobre un paño de lino',
-  canalizacion: 'Una vela junto a un cuaderno en un ambiente sereno',
+  'regresion-vidas-pasadas': 'Una vela junto a un cuaderno en un ambiente sereno',
   'limpieza-energetica': 'Una ventana abierta y hojas de salvia bajo luz natural',
   hero: 'Ondas de agua en un cuenco de piedra bajo la luz del sol',
+};
+
+// Reutilizamos escenas ambientales existentes, sin presentarlas como sesiones.
+const imageSources: Record<string, string> = {
+  'metodo-one': 'metodo-yuen',
+  'metodo-rsame': 'reiki',
+  'regresion-vidas-pasadas': 'canalizacion',
 };
 
 /** Escenas conceptuales generadas; nunca representan a Araceli ni sus sesiones. */
@@ -20,7 +25,7 @@ export function EditorialImage({ id, className = '', priority = false, sizes = '
   return (
     <figure className={className}>
       <div className="relative h-full min-h-[180px] overflow-hidden rounded-[1.5rem]">
-        <Image src={`/images/${id}.webp`} alt={descriptions[id] ?? 'Ambiente de bienestar'} fill sizes={sizes} priority={priority} className="object-cover transition-transform duration-700 group-hover:scale-[1.035]" />
+        <Image src={`/images/${imageSources[id] ?? id}.webp`} alt={descriptions[id] ?? 'Ambiente de bienestar'} fill sizes={sizes} priority={priority} className="object-cover transition-transform duration-700 group-hover:scale-[1.035]" />
       </div>
       {caption ? <figcaption className="mt-3 text-xs text-ink-400">Imagen de ambiente · ilustración generada</figcaption> : null}
     </figure>

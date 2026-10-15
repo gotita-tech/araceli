@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
@@ -26,8 +27,6 @@ type ResultScreenProps = {
   answers: Answers;
   onRestart: () => void;
   onExclude: (id: ModalityId) => void;
-  onToggleTag: (tag: PreferenceTag) => void;
-  extraTags: PreferenceTag[];
   compact?: boolean;
 };
 
@@ -36,8 +35,6 @@ export function ResultScreen({
   answers,
   onRestart,
   onExclude,
-  onToggleTag,
-  extraTags,
   compact = false,
 }: ResultScreenProps) {
   const reducedMotion = useReducedMotion();
@@ -188,12 +185,15 @@ export function ResultScreen({
             <OtherModalities
               ranking={result.ranking}
               highlighted={[result.primaryModality, result.secondaryModality]}
-              energyInterest={tags.has('energyInterest')}
-              magnetsSelected={extraTags.includes('magnetInterest')}
-              onToggleMagnets={() => onToggleTag('magnetInterest')}
             />
           </>
         )}
+
+        <p className="mt-8 text-sm leading-relaxed text-ink-400">
+          El mapa orienta entre Barras de Access, ThetaHealing y la propuesta ritual de limpieza energética.
+          Puedes <Link href="/practicas" className="link-underline text-primary">conocer las siete prácticas</Link> y
+          consultar directamente por las demás propuestas.
+        </p>
 
         <div className="mt-10 rounded-3xl border border-ink/8 bg-white/60 p-6">
           <p className="text-sm font-medium text-ink-700">Tus respuestas</p>
@@ -258,26 +258,17 @@ export function ResultScreen({
 }
 
 /**
- * Ranking completo y preferencias que la persona puede declarar después.
- *
- * El biomagnetismo sólo puede llegar hasta aquí si alguien pide explícitamente
- * incluir experiencias con imanes, y aun así pasa antes por su comprobación.
+ * Otras modalidades vigentes incluidas en el mapa.
  */
 function OtherModalities({
   ranking,
   highlighted,
-  energyInterest,
-  magnetsSelected,
-  onToggleMagnets,
 }: {
   ranking: ScoredModality[];
   highlighted: (ModalityId | null)[];
-  energyInterest: boolean;
-  magnetsSelected: boolean;
-  onToggleMagnets: () => void;
 }) {
   const rest = ranking.filter((item) => !highlighted.includes(item.id));
-  if (rest.length === 0 && !energyInterest) return null;
+  if (rest.length === 0) return null;
 
   return (
     <div className="mt-8">
@@ -299,23 +290,6 @@ function OtherModalities({
             </li>
           ))}
         </ul>
-
-        {energyInterest ? (
-          <label className="mt-6 flex cursor-pointer items-start gap-3 rounded-2xl border border-ink/10 bg-ivory-soft/70 px-4 py-3.5">
-            <input
-              type="checkbox"
-              checked={magnetsSelected}
-              onChange={onToggleMagnets}
-              className="mt-[3px] h-4 w-4 shrink-0 accent-primary"
-            />
-            <span className="text-sm leading-relaxed text-ink-600">
-              Me interesan también las experiencias con imanes.
-              <span className="mt-1 block text-xs text-ink-400">
-                Sólo si lo marcas aparecerá el biomagnetismo, y antes te mostraremos una comprobación de seguridad.
-              </span>
-            </span>
-          </label>
-        ) : null}
 
         <p className="mt-5 text-xs leading-relaxed text-ink-300">
           La afinidad describe compatibilidad con tus preferencias. No ordena las prácticas por eficacia.

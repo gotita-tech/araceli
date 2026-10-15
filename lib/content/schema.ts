@@ -100,6 +100,8 @@ export const modalityContentSchema = z.object({
   id: z.string().min(1),
   name: z.string().min(1, 'La modalidad necesita un nombre'),
   claim: z.string().min(1, 'La modalidad necesita una frase corta'),
+  group: z.string().min(1),
+  mapEnabled: z.boolean().default(true),
   category: z.enum(['Experiencia de bienestar', 'Práctica espiritual', 'Método complementario']),
   evidenceLevel: z.enum(['limitada', 'muy-limitada', 'no-concluyente']),
   blocks: z.object({
@@ -110,8 +112,8 @@ export const modalityContentSchema = z.object({
     whatItIsNot: z.string().min(10),
   }),
   practical: z.object({
-    durationMinutes: z.number().int().positive(),
-    formats: z.array(z.enum(['presencial', 'online'])).min(1),
+    durationMinutes: z.number().int().positive().nullable(),
+    formats: z.array(z.enum(['presencial', 'online'])),
     price: z.number().nullable(),
     priceNote: z.string(),
     availability: z.string(),

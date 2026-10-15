@@ -85,11 +85,9 @@ export type PreferenceTag = (typeof PREFERENCE_TAGS)[number];
 export const BUILT_IN_MODALITY_IDS = [
   'barras-de-access',
   'thetahealing',
-  'reiki',
-  'access-facelift',
-  'canalizacion',
-  'biomagnetismo',
-  'metodo-yuen',
+  'metodo-one',
+  'metodo-rsame',
+  'regresion-vidas-pasadas',
   'liberacion-emociones',
   'limpieza-energetica',
 ] as const;

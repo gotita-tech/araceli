@@ -70,8 +70,6 @@ export function MapExperience({ variant = 'page' }: MapExperienceProps) {
           compact={variant === 'modal'}
           onRestart={() => dispatch({ type: 'restart' })}
           onExclude={(id) => dispatch({ type: 'exclude', id })}
-          onToggleTag={(tag) => dispatch({ type: 'toggleTag', tag })}
-          extraTags={state.extraTags}
         />
       </div>
     );
@@ -91,7 +89,8 @@ export function MapExperience({ variant = 'page' }: MapExperienceProps) {
           </h2>
           <p className="mt-5 max-w-prose text-lede text-ink-500">
             Mientras respondes, una figura se irá formando con tus respuestas. Al terminar verás qué modalidades tienen
-            mayor afinidad con tus preferencias, y por qué.
+            mayor afinidad con tus preferencias, y por qué. El mapa orienta entre Barras de Access, ThetaHealing y la
+            propuesta ritual de limpieza energética. Para las demás prácticas, puedes conversar directamente con Araceli.
           </p>
 
           <ul className="mt-8 space-y-3">

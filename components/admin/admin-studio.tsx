@@ -216,7 +216,7 @@ type ModalityDraft = {
   evidenceLevel: string;
   blocks: Record<string, string>;
   practical: {
-    durationMinutes: number;
+    durationMinutes: number | null;
     formats: string[];
     price: number | null;
     priceNote: string;
@@ -258,13 +258,13 @@ function ModalitiesEditor({ value, onChange }: { value: ModalitiesDraft; onChang
             <Field label="Nombre" value={item.name} onChange={(name) => setItem(index, { ...item, name })} />
             <Field label="Frase corta" value={item.claim} onChange={(claim) => setItem(index, { ...item, claim })} />
             <Field
-              label="Duración (minutos)"
+              label="Duración (minutos, vacío = consultar)"
               type="number"
-              value={String(item.practical.durationMinutes)}
+              value={item.practical.durationMinutes === null ? '' : String(item.practical.durationMinutes)}
               onChange={(next) =>
                 setItem(index, {
                   ...item,
-                  practical: { ...item.practical, durationMinutes: Number(next) || 0 },
+                  practical: { ...item.practical, durationMinutes: next === '' ? null : Number(next) },
                 })
               }
             />

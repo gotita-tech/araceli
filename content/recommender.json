@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "updatedAt": "2026-08-26",
+  "version": "1.1.0",
+  "updatedAt": "2026-10-14",
   "engine": {
     "dimensionWeight": 0.62,
     "preferenceWeight": 0.38,
@@ -157,102 +157,75 @@
     {
       "id": "barras-de-access",
       "name": "Barras de Access",
-      "resultBlurb": "Una experiencia de contacto suave que podrías explorar si buscas principalmente relajación y un momento de pausa.",
+      "resultBlurb": "Contacto suave en 32 puntos de la cabeza, en un entorno tranquilo y respetando tus preferencias.",
       "group": "pausa-relajacion",
-      "vector": { "mentalCalm": 3, "emotionalExploration": 1, "beliefsPatterns": 1, "innerConnection": 1, "bodyRelaxation": 3, "spirituality": 1 },
-      "bonuses": { "headTouch": 3, "silence": 2, "relaxation": 2 },
+      "vector": {
+        "mentalCalm": 3,
+        "emotionalExploration": 1,
+        "beliefsPatterns": 1,
+        "innerConnection": 1,
+        "bodyRelaxation": 3,
+        "spirituality": 1
+      },
+      "bonuses": {
+        "headTouch": 3,
+        "silence": 2,
+        "relaxation": 2
+      },
       "touch": "head",
-      "formats": ["presencial"],
-      "maxInitialSessions": 2
+      "formats": [
+        "presencial"
+      ],
+      "maxInitialSessions": 1
     },
     {
       "id": "thetahealing",
       "name": "ThetaHealing",
-      "resultBlurb": "Un enfoque espiritual orientado a observar creencias y patrones personales.",
+      "resultBlurb": "Exploración de creencias personales mediante conversación y meditación de enfoque espiritual.",
       "group": "creencias-autoconocimiento",
-      "vector": { "mentalCalm": 1, "emotionalExploration": 2, "beliefsPatterns": 3, "innerConnection": 3, "bodyRelaxation": 0, "spirituality": 3 },
-      "bonuses": { "conversation": 2, "beliefExploration": 3, "spiritualOpenness": 2, "online": 1 },
+      "vector": {
+        "mentalCalm": 1,
+        "emotionalExploration": 2,
+        "beliefsPatterns": 3,
+        "innerConnection": 3,
+        "bodyRelaxation": 0,
+        "spirituality": 3
+      },
+      "bonuses": {
+        "conversation": 2,
+        "beliefExploration": 3,
+        "spiritualOpenness": 2,
+        "online": 1
+      },
       "touch": "none",
-      "formats": ["presencial", "online"],
-      "maxInitialSessions": 3
-    },
-    {
-      "id": "reiki",
-      "name": "Reiki",
-      "resultBlurb": "Una práctica de bienestar en silencio, pensada como pausa y descanso del ritmo cotidiano.",
-      "group": "pausa-relajacion",
-      "vector": { "mentalCalm": 3, "emotionalExploration": 1, "beliefsPatterns": 0, "innerConnection": 2, "bodyRelaxation": 3, "spirituality": 2 },
-      "bonuses": { "silence": 2, "relaxation": 3, "energyInterest": 2 },
-      "touch": "optional",
-      "formats": ["presencial"],
-      "maxInitialSessions": 3
-    },
-    {
-      "id": "access-facelift",
-      "name": "Access Facelift",
-      "resultBlurb": "Un tratamiento suave de rostro y cuello que algunas personas eligen como gesto de autocuidado.",
-      "group": "experiencias-corporales",
-      "vector": { "mentalCalm": 2, "emotionalExploration": 0, "beliefsPatterns": 0, "innerConnection": 1, "bodyRelaxation": 3, "spirituality": 1 },
-      "bonuses": { "faceNeckTouch": 3, "relaxation": 2, "selfCare": 2 },
-      "touch": "faceNeck",
-      "formats": ["presencial"],
-      "maxInitialSessions": 2
-    },
-    {
-      "id": "canalizacion",
-      "name": "Canalización",
-      "resultBlurb": "Una experiencia intuitiva y simbólica, para quienes disfrutan de este tipo de exploración.",
-      "group": "exploracion-espiritual",
-      "vector": { "mentalCalm": 0, "emotionalExploration": 1, "beliefsPatterns": 1, "innerConnection": 3, "bodyRelaxation": 0, "spirituality": 3 },
-      "bonuses": { "intuitiveExperience": 3, "spiritualOpenness": 3, "reflection": 2 },
-      "touch": "none",
-      "formats": ["presencial", "online"],
+      "formats": [
+        "presencial",
+        "online"
+      ],
       "maxInitialSessions": 1
     },
     {
-      "id": "biomagnetismo",
-      "name": "Biomagnetismo",
-      "resultBlurb": "Una experiencia energética corporal con imanes, para quienes ya sienten curiosidad por este tipo de prácticas.",
-      "group": "experiencias-corporales",
-      "vector": { "mentalCalm": 1, "emotionalExploration": 0, "beliefsPatterns": 0, "innerConnection": 1, "bodyRelaxation": 2, "spirituality": 1 },
-      "bonuses": { "energyInterest": 2, "magnetInterest": 3 },
-      "touch": "body",
-      "formats": ["presencial"],
-      "maxInitialSessions": 2,
-      "requiresAnyTag": ["energyInterest", "magnetInterest"],
-      "safetyCheckId": "biomagnetismo"
-    },
-    {
-      "id": "metodo-yuen",
-      "name": "Método Yuen",
-      "resultBlurb": "Un método energético sin contacto, orientado a observar patrones personales.",
-      "group": "creencias-autoconocimiento",
-      "vector": { "mentalCalm": 1, "emotionalExploration": 2, "beliefsPatterns": 3, "innerConnection": 2, "bodyRelaxation": 0, "spirituality": 2 },
-      "bonuses": { "energyInterest": 2, "noTouch": 2, "patternExploration": 2 },
-      "touch": "none",
-      "formats": ["presencial", "online"],
-      "maxInitialSessions": 2
-    },
-    {
-      "id": "liberacion-emociones",
-      "name": "Liberación de emociones",
-      "resultBlurb": "Un espacio guiado para explorar y poner palabras a aquello que sientes.",
-      "group": "creencias-autoconocimiento",
-      "vector": { "mentalCalm": 1, "emotionalExploration": 3, "beliefsPatterns": 2, "innerConnection": 2, "bodyRelaxation": 1, "spirituality": 1 },
-      "bonuses": { "emotionalExploration": 3, "reflection": 2 },
-      "touch": "none",
-      "formats": ["presencial", "online"],
-      "maxInitialSessions": 3
-    },
-    {
       "id": "limpieza-energetica",
-      "name": "Limpieza energética",
-      "resultBlurb": "Un ritual de bienestar con enfoque espiritual, para quienes disfrutan de este tipo de experiencias.",
+      "name": "Limpieza energética de personas y lugares",
+      "resultBlurb": "Una práctica espiritual y simbólica dirigida a personas o espacios, con detalles acordados previamente.",
       "group": "exploracion-espiritual",
-      "vector": { "mentalCalm": 2, "emotionalExploration": 1, "beliefsPatterns": 0, "innerConnection": 3, "bodyRelaxation": 1, "spirituality": 3 },
-      "bonuses": { "ritualInterest": 3, "energyInterest": 3, "spiritualOpenness": 2 },
+      "vector": {
+        "mentalCalm": 2,
+        "emotionalExploration": 1,
+        "beliefsPatterns": 0,
+        "innerConnection": 3,
+        "bodyRelaxation": 1,
+        "spirituality": 3
+      },
+      "bonuses": {
+        "ritualInterest": 3,
+        "energyInterest": 3,
+        "spiritualOpenness": 2
+      },
       "touch": "none",
-      "formats": ["presencial"],
+      "formats": [
+        "presencial"
+      ],
       "maxInitialSessions": 1
     }
   ]

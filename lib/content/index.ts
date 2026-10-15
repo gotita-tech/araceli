@@ -25,7 +25,7 @@ export function getModalityContent(id: string): ModalityContent | undefined {
 }
 
 export function modalityGroup(id: string): string {
-  return MODALITY_PROFILES.find((profile) => profile.id === id)?.group ?? '';
+  return getModalityContent(id)?.group ?? '';
 }
 
 export function modalitiesByGroup(groupId: string): ModalityContent[] {
@@ -43,18 +43,19 @@ export const EVIDENCE_LABELS: Record<ModalityContent['evidenceLevel'], string> =
 
 /**
  * Comprobación de coherencia entre el contenido editorial y el motor:
- * cada modalidad puntuable debe tener su ficha, y viceversa.
+ * Cada modalidad puntuable debe tener ficha. Las fichas de consulta directa
+ * se publican sin asignarles una afinidad hasta conocer su dinámica.
  */
 const profileIds = new Set(MODALITY_PROFILES.map((profile) => profile.id));
 const contentIds = new Set(MODALITIES.map((item) => item.id));
 
 for (const id of profileIds) {
-  if (!contentIds.has(id)) {
+  if (!contentIds.has(id) || !getModalityContent(id)?.mapEnabled) {
     throw new Error(`La modalidad "${id}" puntúa en el recomendador pero no tiene ficha de contenido.`);
   }
 }
 for (const id of contentIds) {
-  if (!profileIds.has(id)) {
+  if (getModalityContent(id)?.mapEnabled && !profileIds.has(id)) {
     throw new Error(`La modalidad "${id}" tiene ficha de contenido pero no perfil de afinidad.`);
   }
 }

@@ -43,12 +43,6 @@ export default async function ModalityPage({ params }: PageProps) {
   if (!modality) notFound();
 
   const profile = getModalityProfile(modality.id);
-  const extraDisclaimer =
-    modality.id === 'canalizacion'
-      ? DISCLAIMERS.channeling
-      : modality.id === 'biomagnetismo'
-        ? DISCLAIMERS.biomagnetism
-        : null;
 
   return (
     <article className="bg-ivory-paper pb-24 pt-[68px]">
@@ -88,21 +82,13 @@ export default async function ModalityPage({ params }: PageProps) {
             </Reveal>
           ))}
 
-          {extraDisclaimer ? (
-            <Reveal>
-              <p className="mt-4 rounded-3xl border border-primary/20 bg-primary/5 p-6 text-sm leading-relaxed text-ink-600">
-                {extraDisclaimer}
-              </p>
-            </Reveal>
-          ) : null}
-
           <Reveal>
             <div className="mt-12 flex flex-wrap gap-3">
               <Button href="/conversar" size="lg">
                 Conversar con Araceli
               </Button>
-              <Button href="/mapa-interior" variant="secondary" size="lg">
-                Descubrir mi Mapa Interior
+              <Button href={modality.mapEnabled ? '/mapa-interior' : '/practicas'} variant="secondary" size="lg">
+                {modality.mapEnabled ? 'Descubrir mi Mapa Interior' : 'Ver todas las prácticas'}
               </Button>
             </div>
           </Reveal>
@@ -113,12 +99,14 @@ export default async function ModalityPage({ params }: PageProps) {
             <h2 className="eyebrow">La sesión</h2>
 
             <dl className="mt-6 space-y-4 text-sm">
-              <Row label="Duración" value={`${modality.practical.durationMinutes} minutos`} />
-              <Row label="Formato" value={modality.practical.formats.join(' · ')} />
+              <Row label="Duración" value={modality.practical.durationMinutes === null ? 'Consultar' : `${modality.practical.durationMinutes} minutos`} />
+              <Row label="Formato" value={modality.practical.formats.join(' · ') || 'Consultar'} />
               <Row
                 label="Contacto físico"
                 value={
-                  profile?.touch === 'none'
+                  !profile
+                    ? 'Consultar antes de reservar'
+                    : profile.touch === 'none'
                     ? 'Sin contacto'
                     : profile?.touch === 'head'
                       ? 'Contacto suave en la cabeza'
@@ -131,7 +119,7 @@ export default async function ModalityPage({ params }: PageProps) {
               />
               <Row
                 label="Precio"
-                value={modality.practical.price !== null ? `${modality.practical.price} €` : 'Consultar'}
+                value={modality.practical.price !== null ? new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP' }).format(modality.practical.price) : 'Consultar'}
               />
               <Row label="Preparación" value={modality.practical.preparation} />
             </dl>
