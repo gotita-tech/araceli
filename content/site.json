@@ -1,10 +1,10 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "brand": {
     "name": "Araceli",
     "tagline": "Bienestar, crecimiento personal y metafísica contemporánea",
     "shortDescription": "Un espacio para conocerte, explorar aquello que hoy quieres transformar y descubrir diferentes caminos de bienestar junto a Araceli.",
-    "locale": "es-ES",
+    "locale": "es-CL",
     "siteUrl": "https://araceli-five.vercel.app",
     "practitionerRole": "Terapeuta de bienestar y facilitadora de prácticas complementarias"
   },
@@ -15,7 +15,7 @@
     "whatsapp": "+56982895351",
     "instagram": "@araceli_terapias",
     "bookingUrl": "",
-    "city": "",
+    "city": "Llolleo, San Antonio, Chile",
     "note": "Escríbenos para consultar horarios, ubicación y valores."
   },
   "nav": [
@@ -66,7 +66,7 @@
   "mapTeaser": {
     "eyebrow": "Tu Mapa Interior",
     "title": "Nueve preguntas sencillas. Un mapa que se dibuja contigo.",
-    "body": "Mientras respondes, una figura se va formando en pantalla. Al terminar verás qué modalidades tienen mayor afinidad con aquello que hoy te interesa explorar, y por qué.",
+    "body": "Mientras respondes, una figura se forma con tus preferencias. El mapa orienta entre Barras de Access, ThetaHealing y la propuesta ritual de limpieza energética. Para las demás prácticas, puedes conversar directamente con Araceli.",
     "bullets": [
       "Entre 90 y 150 segundos.",
       "Sin nombre, sin datos personales, sin historia clínica.",
@@ -80,14 +80,13 @@
   "intentSelector": {
     "eyebrow": "Empieza por la intención",
     "title": "¿Qué te gustaría explorar hoy?",
-    "body": "Elige una intención y verás qué prácticas suelen acompañar mejor ese momento. Es una orientación, no una prescripción.",
+    "body": "Elige una intención para conocer algunas propuestas relacionadas. Puedes consultar a Araceli antes de decidir.",
     "intents": [
       {
         "id": "calm",
         "label": "Bajar el ritmo",
         "description": "Buscas una pausa, silencio y descanso del día a día.",
         "modalities": [
-          "reiki",
           "barras-de-access"
         ]
       },
@@ -105,8 +104,7 @@
         "label": "Mirar patrones que se repiten",
         "description": "Quieres observar creencias y decisiones que vuelven una y otra vez.",
         "modalities": [
-          "thetahealing",
-          "metodo-yuen"
+          "thetahealing"
         ]
       },
       {
@@ -114,8 +112,16 @@
         "label": "Regalarme un cuidado",
         "description": "Te apetece una experiencia corporal suave y de autocuidado.",
         "modalities": [
-          "access-facelift",
-          "reiki"
+          "barras-de-access"
+        ]
+      },
+      {
+        "id": "energy",
+        "label": "Conocer enfoques energéticos",
+        "description": "Quieres conocer sus propuestas y preguntar por la dinámica de cada una.",
+        "modalities": [
+          "metodo-one",
+          "metodo-rsame"
         ]
       },
       {
@@ -123,8 +129,8 @@
         "label": "Explorar lo espiritual",
         "description": "Te interesa una experiencia simbólica, intuitiva o ritual.",
         "modalities": [
-          "canalizacion",
-          "limpieza-energetica"
+          "limpieza-energetica",
+          "regresion-vidas-pasadas"
         ]
       },
       {
@@ -137,35 +143,35 @@
   },
   "modalitiesSection": {
     "eyebrow": "Prácticas",
-    "title": "Nueve maneras de acompañar un mismo momento.",
-    "body": "Silencio, conversación, contacto suave o exploración espiritual. Conoce cada enfoque y elige con información clara, a tu ritmo.",
+    "title": "Siete prácticas para conocer, a tu ritmo.",
+    "body": "Conoce las propuestas actuales de Araceli: prácticas complementarias y experiencias espirituales, con información clara y espacio para tus preguntas.",
     "groups": [
       {
         "id": "pausa-relajacion",
-        "label": "Pausa y relajación",
-        "description": "Experiencias para bajar el ritmo y descansar."
+        "label": "Pausa y contacto suave",
+        "description": "Una experiencia tranquila con contacto en la cabeza."
       },
       {
         "id": "creencias-autoconocimiento",
-        "label": "Creencias y autoconocimiento",
-        "description": "Espacios de conversación, observación y exploración personal."
+        "label": "Creencias y exploración personal",
+        "description": "Propuestas para conocer distintos enfoques de exploración personal."
       },
       {
-        "id": "experiencias-corporales",
-        "label": "Experiencias corporales",
-        "description": "Prácticas con contacto suave o trabajo sobre el cuerpo."
+        "id": "practicas-energeticas",
+        "label": "Enfoques energéticos",
+        "description": "Consulta cómo desarrolla Araceli cada propuesta."
       },
       {
         "id": "exploracion-espiritual",
         "label": "Exploración espiritual",
-        "description": "Experiencias simbólicas y rituales de bienestar."
+        "description": "Experiencias simbólicas y rituales para personas y espacios."
       }
     ]
   },
   "sessionFlow": {
     "eyebrow": "Cómo funciona",
     "title": "Cómo es una sesión, paso a paso.",
-    "body": "Cada modalidad tiene sus particularidades, pero el marco de acompañamiento es siempre el mismo.",
+    "body": "El marco se adapta a la práctica elegida. Las propuestas para lugares tienen una dinámica diferente, que se acuerda antes de reservar.",
     "steps": [
       {
         "id": "before",
@@ -221,7 +227,7 @@
   "finalCta": {
     "eyebrow": "Tu Mapa Interior",
     "title": "¿Empezamos por conocerte?",
-    "body": "Nueve preguntas, una figura que se dibuja contigo y una orientación clara sobre qué modalidades podrían resultarte compatibles.",
+    "body": "Nueve preguntas para explorar tus preferencias, o una conversación directa para conocer cualquiera de las siete prácticas.",
     "primaryCta": {
       "label": "Descubrir mi Mapa Interior",
       "href": "/mapa-interior"

@@ -26,7 +26,7 @@ export function FloatingMapButton() {
   if (pathname?.startsWith('/mapa-interior')) return null;
 
   return (
-    <div className="pointer-events-none fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-[max(1.25rem,env(safe-area-inset-right))] z-50 flex items-center gap-3">
+    <div className="pointer-events-none relative flex items-center gap-3">
       <AnimatePresence>
         {hovered && !isOpen ? (
           <motion.span
@@ -34,7 +34,7 @@ export function FloatingMapButton() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 8 }}
             transition={{ duration: 0.3, ease: CALM_EASE }}
-            className="pointer-events-none hidden rounded-full border border-ink/8 bg-ivory-paper/95 px-4 py-2 text-sm text-ink-600 shadow-soft backdrop-blur-sm sm:block"
+            className="pointer-events-none absolute right-[66px] hidden whitespace-nowrap rounded-full border border-ink/8 bg-ivory-paper/95 px-4 py-2 text-sm text-ink-600 shadow-soft backdrop-blur-sm sm:block"
             role="tooltip"
             id="map-button-tooltip"
           >

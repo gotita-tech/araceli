@@ -2,7 +2,13 @@
 
 ## 01 — OVERVIEW
 
-Nueve preguntas dibujan una figura con las respuestas de la persona y calculan qué prácticas de bienestar tienen mayor afinidad con lo que quiere explorar. El motor es determinista y auditable, el contenido se valida con Zod en build, y 22 pruebas guardan las reglas de seguridad.
+Nueve preguntas dibujan una figura con las respuestas de la persona y calculan qué prácticas de bienestar tienen mayor afinidad con lo que quiere explorar. El motor es determinista y auditable, el contenido se valida con Zod en build, y 25 pruebas comprueban el catálogo, la orientación y sus límites.
+
+## Catálogo vigente · 14 de octubre de 2026
+
+La web presenta siete prácticas confirmadas: ThetaHealing, Barras de Access, Método ONE, Método Rsame, Liberación de emociones atrapadas, Limpieza energética de personas y lugares, y Regresión a vidas pasadas. [Investigación, fuentes y decisiones editoriales](docs/catalogo-vigente-2026-10-14.md).
+
+Las fichas tienen un `group` editorial independiente del recomendador. `mapEnabled: false` permite publicar propuestas de consulta directa sin inventar puntuaciones de afinidad: actualmente son Método ONE, Método Rsame, Liberación de emociones atrapadas y Regresión a vidas pasadas. El mapa conserva los tres perfiles vigentes previamente configurados. Duración nula y formatos vacíos se muestran como «Consultar».
 
 `Next.js 15` `TypeScript` `Zod` `React Three Fiber` `node:test`
 
@@ -25,7 +31,7 @@ El cálculo es un motor determinista con pesos y reglas explícitas: las mismas 
 - Sin diagnóstico: ni el copy ni el motor infieren estados de salud.
 - Sin promesas de eficacia.
 - Nunca más de tres encuentros en la ruta inicial, y sólo más de uno si la persona pidió un proceso.
-- El biomagnetismo no se ofrece por síntomas: requiere interés declarado y pasa por una comprobación de dispositivos implantados.
+- Las prácticas retiradas no se ofrecen desde el catálogo, las intenciones ni los resultados del mapa. Las reglas sanitarias y de contacto se mantienen.
 - Privacidad por defecto: el cálculo ocurre en el navegador y guardar es opcional.
 - Nada inventado — ni testimonios, ni fechas, ni certificaciones.
 

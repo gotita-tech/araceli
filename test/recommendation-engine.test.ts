@@ -68,7 +68,7 @@ test('quien busca calma y acepta contacto suave recibe una práctica de pausa', 
   const result = recommend({ answers: calmSeeker });
   assert.ok(result.primaryModality, 'debería existir una modalidad principal');
   assert.ok(
-    ['barras-de-access', 'reiki', 'access-facelift'].includes(String(result.primaryModality)),
+    result.primaryModality === 'barras-de-access',
     `principal inesperada: ${result.primaryModality}`,
   );
   assert.equal(result.initialPath.sessions, 1, 'pidió una primera experiencia');
@@ -78,7 +78,7 @@ test('quien busca calma y acepta contacto suave recibe una práctica de pausa', 
 
 test('quien quiere mirar patrones y elige online recibe una práctica conversada disponible online', () => {
   const result = recommend({ answers: beliefsSeeker });
-  assert.ok(['thetahealing', 'metodo-yuen', 'liberacion-emociones'].includes(String(result.primaryModality)));
+  assert.equal(result.primaryModality, 'thetahealing');
   for (const item of result.ranking) {
     const profile = MODALITY_PROFILES.find((candidate) => candidate.id === item.id);
     assert.ok(profile?.formats.includes('online'), `${item.id} no está disponible online`);
@@ -94,7 +94,7 @@ test('la preferencia "sin contacto" excluye cualquier modalidad con contacto', (
   assert.ok(result.safetyFlags.includes('constraint:no-touch'));
 });
 
-test('el biomagnetismo nunca aparece sin interés explícito en prácticas energéticas', () => {
+test('las prácticas retiradas nunca aparecen, incluso con interés energético explícito', () => {
   const withoutInterest = recommend({ answers: calmSeeker });
   assert.ok(!withoutInterest.ranking.some((item) => item.id === 'biomagnetismo'));
 
@@ -104,13 +104,15 @@ test('el biomagnetismo nunca aparece sin interés explícito en prácticas energ
     expectation: ['energy'],
   };
   const withInterest = recommend({ answers: energyInterested });
-  assert.ok(withInterest.ranking.some((item) => item.id === 'biomagnetismo'));
+  for (const result of [withoutInterest, withInterest]) {
+    assert.ok(result.ranking.every((item) => !['reiki', 'access-facelift', 'metodo-yuen', 'canalizacion', 'biomagnetismo'].includes(item.id)));
+  }
 });
 
 test('quien puede excluir una modalidad tras la comprobación de seguridad no vuelve a verla', () => {
   const energyInterested: Answers = { ...calmSeeker, experience: ['energy-space'], expectation: ['energy'] };
-  const result = recommend({ answers: energyInterested, excludedModalities: ['biomagnetismo'] });
-  assert.ok(!result.ranking.some((item) => item.id === 'biomagnetismo'));
+  const result = recommend({ answers: energyInterested, excludedModalities: ['barras-de-access'] });
+  assert.ok(!result.ranking.some((item) => item.id === 'barras-de-access'));
 });
 
 test('respuestas poco concluyentes dejan el mapa abierto en lugar de inventar una recomendación', () => {
@@ -175,7 +177,6 @@ test('quien declara que la espiritualidad no forma parte de su vida ve atenuadas
   const affinityOf = (result: ReturnType<typeof recommend>, id: string) =>
     result.ranking.find((item) => item.id === id)?.affinity ?? 0;
 
-  assert.ok(affinityOf(secularResult, 'canalizacion') < affinityOf(openResult, 'canalizacion'));
   assert.ok(affinityOf(secularResult, 'limpieza-energetica') < affinityOf(openResult, 'limpieza-energetica'));
 });
 
@@ -202,7 +203,7 @@ test('cada modalidad declara un máximo administrable de encuentros iniciales de
   }
 });
 
-test('declarar interés explícito en imanes es la única vía que eleva el biomagnetismo', () => {
+test('una preferencia antigua por imanes no recupera servicios retirados', () => {
   const energyInterested: Answers = {
     ...calmSeeker,
     experience: ['energy-space'],
@@ -212,10 +213,9 @@ test('declarar interés explícito en imanes es la única vía que eleva el biom
   const base = recommend({ answers: energyInterested });
   const withMagnets = recommend({ answers: energyInterested, extraTags: ['magnetInterest'] });
 
-  const affinityOf = (result: ReturnType<typeof recommend>) =>
-    result.ranking.find((item) => item.id === 'biomagnetismo')?.affinity ?? 0;
-
-  assert.ok(affinityOf(withMagnets) > affinityOf(base));
+  for (const result of [base, withMagnets]) {
+    assert.ok(!result.ranking.some((item) => item.id === 'biomagnetismo'));
+  }
   assert.ok(withMagnets.activeTags.includes('magnetInterest'));
 });
 
@@ -226,8 +226,10 @@ test('las preferencias declaradas después del cuestionario siguen siendo reprod
   assert.deepEqual(first, second);
 });
 
-test('toda modalidad con contraindicaciones declara su comprobación de seguridad', () => {
-  const biomagnetismo = MODALITY_PROFILES.find((profile) => profile.id === 'biomagnetismo');
-  assert.ok(biomagnetismo?.safetyCheckId, 'el biomagnetismo debe exigir comprobación previa');
-  assert.deepEqual(biomagnetismo?.requiresAnyTag, ['energyInterest', 'magnetInterest']);
+test('el mapa no asigna afinidades inventadas a prácticas de consulta directa', () => {
+  const deferred = ['metodo-one', 'metodo-rsame', 'liberacion-emociones', 'regresion-vidas-pasadas'];
+  for (const answers of [calmSeeker, beliefsSeeker, undecided]) {
+    const result = recommend({ answers });
+    assert.ok(result.ranking.every((item) => !deferred.includes(item.id)));
+  }
 });

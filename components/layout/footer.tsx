@@ -2,9 +2,12 @@ import Link from 'next/link';
 
 import Image from 'next/image';
 import { site } from '@/lib/content';
+import { instagramUrl, whatsappUrl } from '@/lib/contact-links';
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const whatsapp = site.contact.configured ? whatsappUrl(site.contact.whatsapp) : null;
+  const instagram = instagramUrl(site.contact.instagram);
 
   return (
     <footer className="border-t border-ink/8 bg-ivory-soft">
@@ -30,7 +33,8 @@ export function Footer() {
                 </Link>
               ))}
             </nav>
-            <a href="https://wa.me/56982895351" className="link-underline text-sm text-primary">WhatsApp · +56 9 8289 5351 ↗</a>
+            {whatsapp ? <a href={whatsapp} target="_blank" rel="noopener noreferrer" className="link-underline text-sm text-primary">WhatsApp · +56 9 8289 5351 ↗</a> : null}
+            {instagram ? <a href={instagram} target="_blank" rel="noopener noreferrer" className="link-underline text-sm text-primary">Instagram · {site.contact.instagram} ↗</a> : null}
           </div>
         </div>
 

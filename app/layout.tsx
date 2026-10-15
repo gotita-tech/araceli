@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
 
-import { FloatingMapButton } from '@/components/map/floating-map-button';
+import { FloatingActions } from '@/components/layout/floating-actions';
 import { MapModal } from '@/components/map/map-modal';
 import { MapProvider } from '@/components/map/map-provider';
 import { Footer } from '@/components/layout/footer';
@@ -34,11 +34,11 @@ export const metadata: Metadata = {
   },
   description: site.brand.shortDescription,
   applicationName: `${site.brand.name} · Tu Mapa Interior`,
-  keywords: ['bienestar', 'crecimiento personal', 'prácticas complementarias', 'Reiki', 'ThetaHealing', 'meditación'],
+  keywords: ['Araceli Terapias', 'Llolleo', 'San Antonio', 'prácticas complementarias', 'ThetaHealing', 'Barras de Access'],
   authors: [{ name: site.brand.name }],
   openGraph: {
     type: 'website',
-    locale: 'es_ES',
+    locale: 'es_CL',
     title: `${site.brand.name} · Tu Mapa Interior`,
     description: site.brand.shortDescription,
     siteName: site.brand.name,
@@ -104,7 +104,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
           </main>
           <Footer />
-          <FloatingMapButton />
+          <FloatingActions
+            whatsapp={site.contact.configured ? site.contact.whatsapp : ''}
+            instagram={site.contact.instagram}
+          />
           <MapModal />
         </MapProvider>
       </body>
